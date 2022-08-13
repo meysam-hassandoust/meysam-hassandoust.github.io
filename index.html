@@ -33,6 +33,51 @@ img {
 
 }
 
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+.subnav .subnavbtn {
+  font-size: 17px;  
+  border: none;
+  outline: none;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: 'Times New Roman', serif;;
+  border-bottom: 3px solid transparent;
+  margin: 0;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+
 /* Style the links inside the navigation bar */
 #navbar a {
   float: left;
@@ -68,6 +113,31 @@ img {
 .sticky + .content {
   padding-top: 0px;
 }
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
 </style>
 </head>
 
@@ -78,10 +148,15 @@ img {
 </div>
 
 <div id="navbar">
- 
   <a class="active" href="https://meysam-hassandoust.github.io/">Home</a>
   <a href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <a href="https://meysam-hassandoust.github.io/publications">Publications</a>
+  <div class="subnav">
+    <button class="subnavbtn">Research<i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#company">Publications</a>
+      <a href="#team">Unpubliccations</a>
+    </div>
+   </div> 
   <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
   <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
   <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
