@@ -3,24 +3,17 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.dot {
-  height: 10px;
-  width: 10px;
-  background-color: black;
-  border-radius: 50%;
-  display: inline-block;
-}
-.dot1 {
-  height: 10px;
-  width: 10px;
-  background-color: gray;
-  border-radius: 10%;
-  display: inline-block;
-}
-
 body {
   margin: 0;
   font-family: 'Times New Roman', serif;
+}
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
 }
 
 img {
@@ -39,6 +32,51 @@ img {
   overflow: hidden;
 
 }
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+.subnav .subnavbtn {
+  font-size: 17px;  
+  border: none;
+  outline: none;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: 'Times New Roman', serif;;
+  border-bottom: 3px solid transparent;
+  margin: 0;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
 
 /* Style the links inside the navigation bar */
 #navbar a {
@@ -75,6 +113,31 @@ img {
 .sticky + .content {
   padding-top: 0px;
 }
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
 </style>
 </head>
 
@@ -85,10 +148,15 @@ img {
 </div>
 
 <div id="navbar">
- 
-  <a href="https://meysam-hassandoust.github.io/">Home</a>
+  <a  href="https://meysam-hassandoust.github.io/">Home</a>
   <a class="active"href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <a href="https://meysam-hassandoust.github.io/publications">Publications</a>
+  <div class="subnav">
+    <button class="subnavbtn">Research<i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#company">Publications</a>
+      <a href="#team">Unpubliccations</a>
+    </div>
+   </div> 
   <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
   <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
   <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
@@ -139,7 +207,8 @@ button:hover, a:hover {
   <h1 style="font-size :110%;">Meysam Hassandoost</h1>
   <p class="title"style="font-size :90%;">>>Theoretical Physics @SBU</p>
   <p class="title"style="font-size :90%;">>>May 05, 2000, Tehran, Iran</p>  
-  <p class="title"style="font-size :90%;">>>Quantum Optics, Quantum Information ,  Mathematical Physics , Classical Mechanics  , Quantum Foundations </p> 
+  <p class="title"style="font-size :90%;">>>Quantum Optics, Quantum &nbsp;&nbsp;&nbsp;&nbsp;Information ,
+  Mathematical &nbsp;&nbsp;&nbsp;&nbsp;Physics , Classical Mechanics  , Quantum Foundations </p> 
   
   <div style="margin: 24px 0;">
     <a href="www.Meysamryn@gmail.com"><i class="fa fa-envelope"></i></a> 
@@ -147,6 +216,9 @@ button:hover, a:hover {
     <a href="#"><i class="fa fa-linkedin"></i></a>   
   </div>
 </div>
+
+<body>
+
 
 <body>
 <div class="content">
@@ -200,11 +272,6 @@ button:hover, a:hover {
   <h style="font-size:150%; color:black-gray;">&nbsp;&nbsp;&nbsp;Numerical solution of Laplace Equation in Electromagnetic .</h>
 </p>
 
- <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dot1"></span>
-  <h style="font-size:150%; color:black-gray;">&nbsp;&nbsp;&nbsp;Ising Model in 2-D .</h>
-</p>
- 
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dot1"></span>
   <h style="font-size:150%; color:black-gray;">&nbsp;&nbsp;&nbsp;Numerical solution of the Three-Body Problem .</h>
