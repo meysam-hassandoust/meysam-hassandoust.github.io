@@ -68,14 +68,6 @@ img {
   text-decoration: none;
 }
 
-.subnav-content a:hover {
-  background-color: #eee;
-  color: black;
-}
-
-.subnav:hover .subnav-content {
-  display: block;
-}
 
 
 /* Style the links inside the navigation bar */
@@ -114,23 +106,33 @@ img {
   padding-top: 0px;
 }
 
+.sticky1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky1 + .content {
+  padding-top: 0px;
+}
+
 .subnav-content {
   display: none;
   position: absolute;
   left: 0;
-  background-color: red;
+  background-color: black;
   width: 100%;
   z-index: 1;
 }
 
 .subnav-content a {
   float: left;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 .subnav-content a:hover {
-  background-color: #eee;
+  background-color: red;
   color: black;
 }
 
@@ -148,13 +150,13 @@ img {
 </div>
 
 <div id="navbar">
-  <a href="https://meysam-hassandoust.github.io/">Home</a>
+  <a  href="https://meysam-hassandoust.github.io/">Home</a>
   <a href="https://meysam-hassandoust.github.io/cv">CV</a>
   <div class="subnav">
     <button class="subnavbtn">Research<i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
       <a href="#company">Publications</a>
-      <a href="#team">Unpubliccations</a>
+      <a href="#team">Unpublications</a>
     </div>
    </div> 
   <a class="active"href="https://meysam-hassandoust.github.io/notes">Notes</a>
@@ -218,9 +220,12 @@ button:hover, a:hover {
 </div>
 
 <body>
+
+
+<body>
 <div class="content">
-  <h3 style="font-size:200%;">Notes</h3>
-</div>
+  <h3 style="font-size:200%;"><strong>Notes</strong></h3>
+  </div>
 </body>
 
 <script>
@@ -229,6 +234,7 @@ window.onscroll = function() {myFunction()};
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
+
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
@@ -236,7 +242,26 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
 </script>
+<script>
+window.onscroll1 = function() {myFunction1()};
+
+var subnav = document.getElementById("subnav");
+var sticky1 = subnav.offsetTop;
+
+
+function myFunction1() {
+  if (window.pageYOffset >= sticky1) {
+    subnav.classList.add("sticky1")
+  } else {
+    subnav.classList.remove("sticky1");
+  }
+}
+
+</script>
+
 
 </body>
 </html>
+
