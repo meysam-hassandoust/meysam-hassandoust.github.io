@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot1 {
+  height: 10px;
+  width: 10px;
+  background-color: gray;
+  border-radius: 10%;
+  display: inline-block;
+}
+body {
+  margin: 0;
+  font-family: 'Times New Roman', serif;
+}
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+img {
+  border-radius: 8px;
+}
+.header {
+  padding: 150px;
+  text-align: center;
+  background:  #031814;
+  color: white;
+  font-size: 30px;
+}
+
+#navbar {
+  background-color: #333;
+  overflow: hidden;
+
+}
+
+/* Style the links inside the navigation bar */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+#navbar a:hover {
+  border-bottom: 3px solid red;
+}
+
+#navbar a.active {
+  border-bottom: 3px solid red;
+}
+.content {
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 250px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 0px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  
+</div>
+
+<div id="navbar">
+ 
+  <a class="active" href="https://meysam-hassandoust.github.io/">Home</a>
+  <a href="https://meysam-hassandoust.github.io/cv">CV</a>
+  <a href="https://meysam-hassandoust.github.io/publications">Publications</a>
+  <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
+  <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
+  <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
+</div>
+<head>
+<style>
+.card {
+  position: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0, 0);
+  max-width: 210px;
+  margin: left;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="card"style="float: left">
+  <img src="https://github.com/MeysamHassandoost/meysamhassandoost.github.io/blob/main/unnamed1.jpg?raw=true"style="left; width:100%">
+  <h1 style="font-size :110%;">Meysam Hassandoost</h1>
+  <p class="title"style="font-size :90%;">>>Theoretical Physics @SBU</p>
+  <p class="title"style="font-size :90%;">>>May 05, 2000, Tehran, Iran</p>  
+  <p class="title"style="font-size :90%;">>>Quantum Optics, Quantum &nbsp;&nbsp;&nbsp;&nbsp;Information ,
+  Mathematical &nbsp;&nbsp;&nbsp;&nbsp;Physics , Classical Mechanics  , Quantum Foundations </p> 
+  
+  <div style="margin: 24px 0;">
+    <a href="www.Meysamryn@gmail.com"><i class="fa fa-envelope"></i></a> 
+    <a href="https://github.com/Meysam-Hassandoust"><i class="fa fa-github"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>   
+  </div>
+</div>
+
+<body>
+<div class="content">
+  <h3 style="font-size:200%;">About</h3>
+
+<p>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dot1"></span>
+<a style="font-size:150%; color:blue;" href = "https://meysam-hassandoust.github.io/publications(un)">
+<h style="font-size:150%; color:black-gray;">&nbsp;&nbsp;&nbsp;Electromagnetically Induced Transparency (EIT)</h>
+</a>
+</p> 
+
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>
 
