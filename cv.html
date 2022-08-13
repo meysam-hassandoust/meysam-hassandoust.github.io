@@ -2,13 +2,17 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
- .dot {
+.dot {
   height: 10px;
   width: 10px;
   background-color: black;
   border-radius: 50%;
   display: inline-block;
+}
+img {
+  border-radius: 8px;
 }
 .dot1 {
   height: 10px;
@@ -22,20 +26,15 @@ body {
   margin: 0;
   font-family: 'Times New Roman', serif;
 }
-.mobile-container {
-  max-width: 480px;
-  margin: auto;
-  background-color: #555;
-  height: 500px;
-  color: white;
-  border-radius: 10px;
-}
 
-img {
-  border-radius: 8px;
+.content {
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 250px;
 }
 .header {
-  padding: 150px;
+  padding: 100px;
   text-align: center;
   background:  #031814;
   color: white;
@@ -43,25 +42,17 @@ img {
 }
 
 #navbar {
-  background-color: #333;
   overflow: hidden;
-
-}
-
-.navbar a:hover, .navbar:hover .subnavbtn {
-  background-color: red;
+  background-color: #333;
 }
 
 #navbar a {
   float: left;
-  display: block;
-  color: #f2f2f2;
+  font-size: 16px;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-  border-bottom: 3px solid transparent;
-  margin: 0;
 }
 
 #navbar a:hover {
@@ -72,69 +63,57 @@ img {
   border-bottom: 3px solid red;
 }
 
-.navbar {
+.dropdown {
   float: left;
   overflow: hidden;
-}
-.navbar .subnavbtn {
-  font-size: 17px;  
-  border: none;
-  outline: none;
-  color: #f2f2f2;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: 'Times New Roman', serif;;
-  border-bottom: 3px solid transparent;
-  margin: 0;
-}
-
-.navbar-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  background-color: red;
-  width: 100%;
-  z-index: 1;
-}
-
-.navbar-content a {
-  float: left;
-  color: white;
-  text-decoration: none;
-}
-
-
-
-/* Style the links inside the navigation bar */
-.content {
-  padding-top: 50px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 250px;
-}
-
-.subnav {
-  background-color: #333;
-  overflow: hidden;
-  float: left;
-  overflow: hidden;
-}
-.navbar-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  background-color: black;
-  width: 100%;
-  z-index: 1;
-}
-
-
-.navbar-content a:hover {
-  background-color: black;
-  color: black;
 }
 
 .navbar:hover .navbar-content {
+  display: block;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+#navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position:absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: red;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }
 
@@ -142,11 +121,11 @@ img {
   position: fixed;
   top: 0;
   width: 100%;
-  Height: 17%;
+  
 }
 
 .sticky + .content {
-  padding-top: 0px;
+  padding-top: 60px;
 }
 
 </style>
@@ -161,21 +140,23 @@ img {
 <div id="navbar">
   <a  href="https://meysam-hassandoust.github.io/">Home</a>
   <a class="active"href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <div class="navbar">
-    <button class="subnavbtn">Research<i class="fa fa-caret-down"></i></button>
-    <div class="navbar-content">
+  <div class="dropdown">
+    <button class="dropbtn">Research 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
       <a href="#company">Publications</a>
       <a href="https://meysam-hassandoust.github.io/publications">Unpublications</a>
     </div>
-   </div> 
+  </div> 
   <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
   <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
   <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
+  
 </div>
 <head>
 <style>
 .card {
-  padding-top: 90px;
   position: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0, 0);
   max-width: 210px;
