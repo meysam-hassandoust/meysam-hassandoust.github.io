@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .dot {
   height: 10px;
@@ -10,6 +11,9 @@
   border-radius: 50%;
   display: inline-block;
 }
+img {
+  border-radius: 8px;
+}
 .dot1 {
   height: 10px;
   width: 10px;
@@ -17,24 +21,20 @@
   border-radius: 10%;
   display: inline-block;
 }
+
 body {
   margin: 0;
   font-family: 'Times New Roman', serif;
 }
-.mobile-container {
-  max-width: 480px;
-  margin: auto;
-  background-color: #555;
-  height: 500px;
-  color: white;
-  border-radius: 10px;
-}
 
-img {
-  border-radius: 8px;
+.content {
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 250px;
 }
 .header {
-  padding: 150px;
+  padding: 100px;
   text-align: center;
   background:  #031814;
   color: white;
@@ -42,21 +42,17 @@ img {
 }
 
 #navbar {
-  background-color: #333;
   overflow: hidden;
-
+  background-color: #333;
 }
 
-/* Style the links inside the navigation bar */
 #navbar a {
   float: left;
-  display: block;
-  color: #f2f2f2;
+  font-size: 16px;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-  border-bottom: 3px solid transparent;
 }
 
 #navbar a:hover {
@@ -66,22 +62,72 @@ img {
 #navbar a.active {
   border-bottom: 3px solid red;
 }
-.content {
-  padding-top: 0px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 250px;
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.navbar:hover .navbar-content {
+  display: block;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+#navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position:absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: red;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
+  
 }
 
 .sticky + .content {
-  padding-top: 0px;
+  padding-top: 60px;
 }
+
 </style>
 </head>
 
@@ -92,13 +138,21 @@ img {
 </div>
 
 <div id="navbar">
- 
-  <a class="active" href="https://meysam-hassandoust.github.io/">Home</a>
+  <a  href="https://meysam-hassandoust.github.io/">Home</a>
   <a href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <a href="https://meysam-hassandoust.github.io/publications">Publications</a>
-  <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
+  <div class="dropdown">
+    <button class="dropbtn">Research 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#company">Publications</a>
+      <a href="https://meysam-hassandoust.github.io/publications(un)">Unpublications</a>
+    </div>
+  </div> 
+  <a class="active"href="https://meysam-hassandoust.github.io/notes">Notes</a>
   <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
   <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
+  
 </div>
 <head>
 <style>
@@ -136,7 +190,7 @@ a {
 }
 
 button:hover, a:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 </style>
 </head>
@@ -158,16 +212,10 @@ button:hover, a:hover {
 
 <body>
 <div class="content">
-  <h3 style="font-size:200%;">About</h3>
-
-<p>  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="dot1"></span>
-<a style="font-size:150%; color:blue;" href = "https://meysam-hassandoust.github.io/publications(un)">
-<h style="font-size:150%; color:black-gray;">&nbsp;&nbsp;&nbsp;Electromagnetically Induced Transparency (EIT)</h>
-</a>
-</p> 
-
+  <h3 style="font-size:200%;">Unpublications</h3>
+<h3 style="font-size:200%;">Under Construction :)</h3>
 </div>
+</body>
 
 <script>
 window.onscroll = function() {myFunction()};
@@ -186,4 +234,3 @@ function myFunction() {
 
 </body>
 </html>
-
