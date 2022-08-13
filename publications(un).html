@@ -118,38 +118,6 @@ body {
 }
 
 
-.sidenav {
-  width: 240px;
-  position: fixed;
-  z-index: 1;
-  top: 249px;
-  left: 0px;
-  background: #333;
-  overflow-x: hidden;
-  padding: 0px 0;
-}
-
-.sidenav a {
-  padding: 20px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  color: white;
-  display: block;
-}
-
-.sidenav a:hover {
-background-color: black;
-  border-bottom: 3px solid red;
-  color: white;
-}
-
-
-
-.main {
-  margin-left: 140px; /* Same width as the sidebar + left position in px */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
 
 .sticky {
   position: fixed;
@@ -162,23 +130,62 @@ background-color: black;
   padding-top: 60px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+#mySidenav a {
+  position: fixed;
+  left: -150px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 200px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 0 5px 5px 0;
 }
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 248px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 308px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 368px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 428px;
+  background-color: #345
+}
+
+#contact1 {
+  top: 488px;
+  background-color: #555
+}
+
 </style>
 </head>
 
 <body>
-<div class="sidenav">
-  <a href="#about">Quantum Optics</a>
-  <a href="#services">Quantum Mechanics</a>
-  <a href="#clients">Mathematical Physics</a>
-  <a href="#contact">Classical Electromagnetic</a>
-  <a href="#contact">Classical Mechanics</a>
-</div>
+
 <div class="header">
   
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="#" id="about">Quantum Optics</a>
+  <a href="#" id="blog">Quantum Mechanics</a>
+  <a href="#" id="projects">Mathematical Physics</a>
+  <a href="#" id="contact">Classical Mechanics</a>
+  <a href="#" id="contact1">Electromagnetic</a>
 </div>
 
 <div id="navbar">
