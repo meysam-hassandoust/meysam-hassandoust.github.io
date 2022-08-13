@@ -33,15 +33,35 @@ img {
 
 }
 
-.navbar a:hover, .subnav:hover .subnavbtn {
+.navbar a:hover, .navbar:hover .subnavbtn {
   background-color: red;
 }
 
-.subnav {
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+  margin: 0;
+}
+
+#navbar a:hover {
+  border-bottom: 3px solid red;
+}
+
+#navbar a.active {
+  border-bottom: 3px solid red;
+}
+
+.navbar {
   float: left;
   overflow: hidden;
 }
-.subnav .subnavbtn {
+.navbar .subnavbtn {
   font-size: 17px;  
   border: none;
   outline: none;
@@ -53,7 +73,7 @@ img {
   margin: 0;
 }
 
-.subnav-content {
+.navbar-content {
   display: none;
   position: absolute;
   left: 0;
@@ -62,7 +82,7 @@ img {
   z-index: 1;
 }
 
-.subnav-content a {
+.navbar-content a {
   float: left;
   color: white;
   text-decoration: none;
@@ -71,52 +91,20 @@ img {
 
 
 /* Style the links inside the navigation bar */
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  border-bottom: 3px solid transparent;
-}
-
-#navbar a:hover {
-  border-bottom: 3px solid red;
-}
-
-#navbar a.active {
-  border-bottom: 3px solid red;
-}
 .content {
-  padding-top: 0px;
+  padding-top: 50px;
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 250px;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+.subnav {
+  background-color: #333;
+  overflow: hidden;
+  float: left;
+  overflow: hidden;
 }
-
-.sticky + .content {
-  padding-top: 0px;
-}
-
-.sticky1 {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-.sticky1 + .content {
-  padding-top: 0px;
-}
-
-.subnav-content {
+.navbar-content {
   display: none;
   position: absolute;
   left: 0;
@@ -125,19 +113,25 @@ img {
   z-index: 1;
 }
 
-.subnav-content a {
-  float: left;
-  color: black;
-  text-decoration: none;
-}
 
-.subnav-content a:hover {
-  background-color: red;
+.navbar-content a:hover {
+  background-color: black;
   color: black;
 }
 
-.subnav:hover .subnav-content {
+.navbar:hover .navbar-content {
   display: block;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  Height: 17%;
+}
+
+.sticky + .content {
+  padding-top: 0px;
 }
 
 </style>
@@ -152,11 +146,11 @@ img {
 <div id="navbar">
   <a  href="https://meysam-hassandoust.github.io/">Home</a>
   <a class="active"href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <div class="subnav">
+  <div class="navbar">
     <button class="subnavbtn">Research<i class="fa fa-caret-down"></i></button>
-    <div class="subnav-content">
+    <div class="navbar-content">
       <a href="#company">Publications</a>
-      <a href="#team">Unpublications</a>
+      <a href="https://meysam-hassandoust.github.io/publications">Unpublications</a>
     </div>
    </div> 
   <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
@@ -166,6 +160,7 @@ img {
 <head>
 <style>
 .card {
+  padding-top: 90px;
   position: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0, 0);
   max-width: 210px;
@@ -199,7 +194,7 @@ a {
 }
 
 button:hover, a:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 </style>
 </head>
