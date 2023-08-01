@@ -31,7 +31,7 @@ body {
   padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 10px;
-  padding-left: 250px;
+  padding-left: 0px;
 }
 .header {
   padding: 100px;
@@ -117,6 +117,8 @@ body {
   display: block;
 }
 
+
+
 .sticky {
   position: fixed;
   top: 0;
@@ -128,101 +130,45 @@ body {
   padding-top: 60px;
 }
 
-.base {
-  width: 0px;
-  border-top: 0px solid gray;
-  margin: left;
-  text-align: left;
-  position: relative;
-  padding: 0 0 3px;
+#mySidenav a {
+  position: fixed;
+  left: -150px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 200px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 0 5px 5px 0;
 }
 
-.holder {
-  width: 10px;
-  height: 10px;
-  background: black;
-  margin: left;
-  border-radius: 0 0 50% 50%;
+#mySidenav a:hover {
+  left: 0;
 }
 
-.thread {
-  display: inline-block;
-  width: 2px;
-  height: 200px;
-  background: black;
-  border-radius: 5px;
-  position: relative;
-  transform-origin: 50% 0;
-  animation: moveIt 2.5s ease-in-out infinite;
+#about {
+  top: 248px;
+  background-color: #04AA6D;
 }
 
-.thread:after {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: red;
-  border: 2px solid white;
-  top: -4.5px;
-  left: -3.5px;
+#blog {
+  top: 308px;
+  background-color: #2196F3;
 }
 
-.knob {
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: -0px;
-  left: -4.5px;
-  border: 2px solid rgba(255, 255, 255, .5);
-  border-radius: 50%;
-  border-bottom: 2px solid transparent;
+#projects {
+  top: 368px;
+  background-color: #f44336;
 }
 
-.pendulum {
-  width: 20px;
-  height: 20px;
-  background: -moz-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
-  background: -webkit-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
-  background: -o-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
-  background: -ms-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
-  background: radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
-  border-radius: 50%;
-  position: absolute;
-  bottom: -10px;
-  left: -9px;
+#contact {
+  top: 428px;
+  background-color: #345
 }
 
-.shadow {
-  width: 30px;
-  height: 15px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  margin: 50px auto 0;
-  animation: moveShade 1.25s ease-in-out alternate infinite;
-}
-
-@keyframes moveIt {
-  0%, 100% {
-    transform: rotate(45deg);
-  }
-  50% {
-    transform: rotate(-45deg);
-  }
-}
-
-@keyframes moveShade {
-  0% {
-    transform: translateX(-220px) scale(1.4, .5);
-    filter: blur(20px);
-  }
-  50% {
-    filter: blur(3px);
-  }
-  100% {
-    transform: translateX(220px) scale(1.4, .5);
-    filter: blur(20px);
-  }
+#contact1 {
+  top: 488px;
+  background-color: #555
 }
 
 </style>
@@ -234,17 +180,180 @@ body {
   
 </div>
 
+
 <div id="navbar">
   <a  class="active"href="https://meysam-hassandoust.github.io/">Home</a>
   <a href="https://meysam-hassandoust.github.io/cv">CV</a>
   <a href="https://meysam-hassandoust.github.io/Research">Research</a>
   <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
+  <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
   <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
   
 </div>
 <head>
 <style>
 
+*,
+		*:before,
+		*:after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.pendulum-base {
+			width: 00px;
+			height: 300px;
+			margin: auto;
+			border-top: 3px solid #66d63e;
+		}
+
+		.pendulum {
+			position: absolute;
+			right: 50%;
+			transform: translate(-50%) rotate(20deg);
+			width: 2px;
+			height: 150px;
+			background: #b5ff9a;
+			animation: moveIt 1.5s ease-in-out infinite;
+			transform-origin: 50% 0;
+		}
+
+		.pendulum:nth-of-type(2) {
+			height: 160px;
+			animation-duration: 1.52s;
+		}
+
+		.pendulum:nth-of-type(3) {
+			height: 170px;
+			animation-duration: 1.54s;
+		}
+
+		.pendulum:nth-of-type(4) {
+			height: 180px;
+			animation-duration: 1.56s;
+		}
+
+		.pendulum:nth-of-type(5) {
+			height: 190px;
+			animation-duration: 1.58s;
+		}
+
+		.pendulum:nth-of-type(6) {
+			height: 200px;
+			animation-duration: 1.6s;
+		}
+
+		.pendulum:nth-of-type(7) {
+			height: 210px;
+			animation-duration: 1.62s;
+		}
+
+		.pendulum:nth-of-type(8) {
+			height: 220px;
+			animation-duration: 1.64s;
+		}
+
+		.pendulum:nth-of-type(9) {
+			height: 230px;
+			animation-duration: 1.66s;
+		}
+
+		.pendulum:nth-of-type(10) {
+			animation-duration: 1.68s;
+			height: 240px;
+		}
+
+		.pendulum:nth-of-type(11) {
+			animation-duration: 1.7s;
+			height: 250px;
+		}
+
+		.pendulum:nth-of-type(12) {
+			height: 260px;
+			animation-duration: 1.72s;
+		}
+
+		.pendulum:nth-of-type(13) {
+			height: 270px;
+			animation-duration: 1.74s;
+		}
+
+		.pendulum:nth-of-type(14) {
+			height: 280px;
+			animation-duration: 1.76s;
+		}
+
+		.pendulum:nth-of-type(15) {
+			height: 290px;
+			animation-duration: 1.78s;
+		}
+
+		@keyframes moveIt {
+
+			0%,
+			100% {
+				transform: translate(-50%) rotate(25deg);
+			}
+
+			50% {
+				transform: translate(-50%) rotate(-25deg);
+			}
+		}
+
+		.pendulum:before {
+			content: "";
+			position: absolute;
+			border-radius: 50%;
+			transform: translate(-50%);
+			left: 50%;
+			top: 100%;
+			width: 15px;
+			height: 15px;
+			background:
+			radial-gradient(circle at 70% 35%,
+				white, #66d63e 30%, #40a31d 50%);
+		}
+
+		.pendulum:after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			top: 115%;
+			border-radius: 50%;
+			filter: blur(5px);
+			width: 25px;
+			height: 3px;
+			background: rgba(0, 0, 0, 0.3);
+		}
+
+.card {
+  position: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0, 0);
+  max-width: 210px;
+  margin: left;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
 a {
   text-decoration: none;
@@ -255,16 +364,35 @@ a {
 button:hover, a:hover {
   opacity: 0.8;
 }
-
-
-
-
 </style>
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</div>
 
+<body>
+<div class="pendulum-base">
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+		<div class="pendulum"></div>
+	</div>
 
-
+<div class="content">
+  <h3 style="font-size:200%;">Problems </h3>
+<br>
+<p style="font-size:130%; color:#708090">Here I put the questions that I think are interesting, and then there are special questions from the four topics of thermodynamics and statistical mechanics, analytical mechanics, quantum mechanics and electromagnetism. Send the correct ones to <a href="mailto:MeysamHassandoust@gmail.com">my email address</a>, it will be assigned. These questions are different from the questions that are asked every month and it is stated here whether these questions are special or not.</p>
+<p style="font-size:130%; color:#708090">Indeed, to access the questions of the first and second stage of the Student Olympiad competitions, send a message to <a href="mailto:MeysamHassandoust@gmail.com">my email </a> or <a href="https://t.me/Meysamryn">my Telegram account</a>.
+</div></body>
 
 <script>
 window.onscroll = function() {myFunction()};
@@ -281,33 +409,5 @@ function myFunction() {
 }
 </script>
 
-
-
-
-  
-</head>
-
-<body>
-  <div class="base">
-  <div class="holder">
-</div>
-  <div class="thread">
-    <div class="knob"></div>
-    <div class="pendulum"></div>
-  </div>
-  <div class="shadow"></div>
-
-</div>
-  
-  
-
-</body>
-
-<body>
-<div class="content">
-  <h3 style="font-size:200%;">Problems </h3>
-<p style="font-size:130%; color:#708090">Here I put the questions that I think are interesting, and then there are special questions from the four topics of thermodynamics and statistical mechanics, analytical mechanics, quantum mechanics and electromagnetism. Send the correct ones to <a href="mailto:MeysamHassandoust@gmail.com">my email address</a>, it will be assigned. These questions are different from the questions that are asked every month and it is stated here whether these questions are special or not.</p>
-<p style="font-size:130%; color:#708090">Indeed, to access the questions of the first and second stage of the Student Olympiad competitions, send a message to <a href="mailto:MeysamHassandoust@gmail.com">my email </a> or <a href="https://t.me/Meysamryn">my Telegram account</a>.
-</div>
 </body>
 </html>
