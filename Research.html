@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+}
+img {
+  border-radius: 8px;
+}
+.dot1 {
+  height: 10px;
+  width: 10px;
+  background-color: gray;
+  border-radius: 10%;
+  display: inline-block;
+}
+
+body {
+  margin: 0;
+  font-family: 'Times New Roman', serif;
+}
+
+.content {
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 250px;
+}
+.header {
+  padding: 100px;
+  text-align: center;
+  background:  #031814;
+  color: white;
+  font-size: 30px;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  border-bottom: 3px solid red;
+}
+
+#navbar a.active {
+  border-bottom: 3px solid red;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.navbar:hover .navbar-content {
+  display: block;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+#navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position:absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: red;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+#mySidenav a {
+  position: fixed;
+  left: -150px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 200px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 248px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 308px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 368px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 428px;
+  background-color: #345
+}
+
+#contact1 {
+  top: 488px;
+  background-color: #555
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  
+</div>
+
+
+<div id="navbar">
+  <a  class="active"href="https://meysam-hassandoust.github.io/">Home</a>
+  <a href="https://meysam-hassandoust.github.io/cv">CV</a>
+  <a href="https://meysam-hassandoust.github.io/Research">Research</a>
+  <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
+  <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
+  <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
+  
+</div>
+<head>
+<style>
+.card {
+  position: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0, 0);
+  max-width: 210px;
+  margin: left;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+
+.p1 { color: #708090; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 20pt; }
+.s1 { color: #333; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 20pt; }
+ .s2 { color: #999; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
+ .s3 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; vertical-align: 1pt; }
+ .s5 { color: black; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 16pt; }
+ .s6 { color: #333; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: underline; font-size: 16pt; }
+ h2 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
+ .s7 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
+ .s8 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
+.s80 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 13pt; }
+.s81 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s9 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
+ .s10 { color: #333; font-family:Calibri, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+.s82 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 10pt; }
+ .h3 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
+ .s11 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s12 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
+ li {display: block; }
+ #l1 {padding-left: 0pt; }
+ #l1> li>*:first-child:before {content: "• "; color: #333; font-family:Tahoma, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
+
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.8;
+}
+</style>
+</head>
+</div>
+
+<body>
+<div class="content">
+  <h3 style="font-size:200%;">Research</h3>
+  
+  <p style="font-size:130%; color:#708090">Here I write about things that I am personally interested in researching, and if I have written a report on a topic, I share it here.
+If you have any comments, suggestions or mistakes, I would be happy to let you know through the communication channels provided. 
+</p>
+  
+  <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Mechanics 
+
+
+                                                    
+<span class="s9">Sep 2022 ‑ Jul 2023</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry in Quantum Mehcanics for Dirac equation in FRW space time</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry time dependent in Quantum Mehcanics</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
+
+
+ <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Optics
+
+
+<span class="s9">Jun 2022 ‑ Sep 2022</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Rydberg RF Receiver Operation to Track RF Signal Fading and Frequency Drift .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Electromagnetically Induced Transparency (EIT) .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Atom based RF electric field sensing .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Investigating the phenomenon of anti‑resonance and resonance in coupled oscillators and comparing the Fano phenomenon in classical and quantum states .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Analytical solution of N Coupled Oscillators in Classical Mechancis .</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
+
+
+
+ <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Mathematical Physics                                                    
+
+
+<span class="s9">Jun 2022 ‑ Apr 2023</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Pseudo‑Supersymmetry time dependent in Quantum Mechanics</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Pseudo‑Hermitian Hamiltonian Representation Of Quantum Mechanics .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Pseudo‑Supersymmetry in Quantum Mechanics .</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
+
+
+
+ <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Computational Work                                                     
+
+
+
+
+<span class="s9">Jun 2020 ‑ Jul 2022</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical Approach (Monte Carlo Method) For Feynman Path Integral . (Basic)</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical Approach For Schrödinger Equation .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of Laplace Equation in Electromagnetic .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of Ising Model .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of the Three‑Body Problem .</p><p style="text-indent: 0pt;text-align: left;"><br/></p>
+
+</div>
+</body>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>
