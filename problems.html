@@ -117,8 +117,6 @@ body {
   display: block;
 }
 
-
-
 .sticky {
   position: fixed;
   top: 0;
@@ -130,45 +128,101 @@ body {
   padding-top: 60px;
 }
 
-#mySidenav a {
-  position: fixed;
-  left: -150px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 200px;
-  text-decoration: none;
-  font-size: 15px;
-  color: white;
-  border-radius: 0 5px 5px 0;
+.base {
+  width: 0px;
+  border-top: 0px solid gray;
+  margin: left;
+  text-align: left;
+  position: relative;
+  padding: 0 0 3px;
 }
 
-#mySidenav a:hover {
-  left: 0;
+.holder {
+  width: 10px;
+  height: 10px;
+  background: black;
+  margin: left;
+  border-radius: 0 0 50% 50%;
 }
 
-#about {
-  top: 248px;
-  background-color: #04AA6D;
+.thread {
+  display: inline-block;
+  width: 2px;
+  height: 200px;
+  background: black;
+  border-radius: 5px;
+  position: relative;
+  transform-origin: 50% 0;
+  animation: moveIt 2.5s ease-in-out infinite;
 }
 
-#blog {
-  top: 308px;
-  background-color: #2196F3;
+.thread:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: red;
+  border: 2px solid white;
+  top: -4.5px;
+  left: -3.5px;
 }
 
-#projects {
-  top: 368px;
-  background-color: #f44336;
+.knob {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -0px;
+  left: -4.5px;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  border-bottom: 2px solid transparent;
 }
 
-#contact {
-  top: 428px;
-  background-color: #345
+.pendulum {
+  width: 20px;
+  height: 20px;
+  background: -moz-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -webkit-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -o-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -ms-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: -9px;
 }
 
-#contact1 {
-  top: 488px;
-  background-color: #555
+.shadow {
+  width: 30px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin: 50px auto 0;
+  animation: moveShade 1.25s ease-in-out alternate infinite;
+}
+
+@keyframes moveIt {
+  0%, 100% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes moveShade {
+  0% {
+    transform: translateX(-220px) scale(1.4, .5);
+    filter: blur(20px);
+  }
+  50% {
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateX(220px) scale(1.4, .5);
+    filter: blur(20px);
+  }
 }
 
 </style>
@@ -178,14 +232,6 @@ body {
 
 <div class="header">
   
-</div>
-
-<div id="mySidenav" class="sidenav">
-  <a href="https://meysam-hassandoust.github.io/Quantum Optics" id="about">Quantum Optics</a>
-  <a href="https://meysam-hassandoust.github.io/Quantum Mechanics" id="blog">Quantum Mechanics</a>
-  <a href="https://meysam-hassandoust.github.io/Mathematical Physics" id="projects">Mathematical Physics</a>
-  <a href="https://meysam-hassandoust.github.io/Classical Mechanics" id="contact">Classical Mechanics</a>
-  <a href="https://meysam-hassandoust.github.io/Classical Mechanics" id="contact1">Electromagnetic</a>
 </div>
 
 <div id="navbar">
@@ -199,32 +245,7 @@ body {
 </div>
 <head>
 <style>
-.card {
-  position: left;
-  box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0, 0);
-  max-width: 210px;
-  margin: left;
-  text-align: center;
-  font-family: arial;
-}
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
 
 a {
   text-decoration: none;
@@ -235,22 +256,16 @@ a {
 button:hover, a:hover {
   opacity: 0.8;
 }
+
+
+
+
 </style>
 </head>
-</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<body>
-<div class="content">
-  <h3 style="font-size:200%;">Unpublished Work</h3>
-  
-  <p style="font-size:150%; color:black-gray;">Here I will post about the topics I researched. I hope they are useful =) . 
-</p>
-  
-  
-<h3 style="font-size:200%;">Under Construction :)</h3>
 
-</div>
-</body>
+
 
 <script>
 window.onscroll = function() {myFunction()};
@@ -267,5 +282,32 @@ function myFunction() {
 }
 </script>
 
+
+
+
+  
+</head>
+
+<body>
+  <div class="base">
+  <div class="holder">
+</div>
+  <div class="thread">
+    <div class="knob"></div>
+    <div class="pendulum"></div>
+  </div>
+  <div class="shadow"></div>
+
+</div>
+  
+  
+
+</body>
+
+<body>
+<div class="content">
+  <h3 style="font-size:200%;">Problems </h3>
+<p style="font-size:130%; color:#708090">Here I put the questions that I think are interesting, and then there are special questions from the four topics of thermodynamics and statistical mechanics, analytical mechanics, quantum mechanics and electromagnetism. Send the correct ones to <a href="mailto:MeysamHassandoust@gmail.com">my email address</a>, it will be assigned. These questions are different from the questions that are asked every month and it is stated here whether these questions are special or not.</p>
+</div>
 </body>
 </html>
