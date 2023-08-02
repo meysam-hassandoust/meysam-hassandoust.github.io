@@ -31,7 +31,7 @@ body {
   padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 10px;
-  padding-left: 250px;
+  padding-left: 0px;
 }
 .header {
   padding: 100px;
@@ -180,29 +180,13 @@ body {
   
 </div>
 
-<div id="mySidenav" class="sidenav">
-  <a href="https://meysam-hassandoust.github.io/Quantum Optics" id="about">Quantum Optics</a>
-  <a href="https://meysam-hassandoust.github.io/Quantum Mechanics" id="blog">Quantum Mechanics</a>
-  <a href="https://meysam-hassandoust.github.io/Mathematical Physics" id="projects">Mathematical Physics</a>
-  <a href="https://meysam-hassandoust.github.io/Classical Mechanics" id="contact">Classical Mechanics</a>
-  <a href="https://meysam-hassandoust.github.io/Classical Mechanics" id="contact1">Electromagnetic</a>
-</div>
 
 <div id="navbar">
-  <a  href="https://meysam-hassandoust.github.io/">Home</a>
+  <a  class="active"href="https://meysam-hassandoust.github.io/">Home</a>
   <a href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <div class="dropdown">
-    <button class="dropbtn ">Research 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#company">Publications</a>
-      <a href="https://meysam-hassandoust.github.io/publications(un)">Unpublished Work</a>
-    </div>
-  </div> 
-  <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
+  <a href="https://meysam-hassandoust.github.io/Research">Research</a>
   <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
-  <a href="https://meysam-hassandoust.github.io/solution manuals">Solution Manuals</a>
+  <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
   
 </div>
 <head>
@@ -220,6 +204,29 @@ body {
   color: grey;
   font-size: 18px;
 }
+
+
+p { color: #5D5D5D; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 14pt; }
+.s1 { color: #333; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 20pt; }
+ .s2 { color: #999; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
+ .s3 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; vertical-align: 1pt; }
+ .s5 { color: black; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 16pt; }
+ .s6 { color: #333; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: underline; font-size: 16pt; }
+ h2 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
+ .s7 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
+ .s8 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
+.s80 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 13pt; }
+.s81 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s9 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
+ .s10 { color: #333; font-family:Calibri, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+.s82 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 10pt; }
+ .h3 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
+ .s11 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s12 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
+ li {display: block; }
+ #l1 {padding-left: 0pt; }
+ #l1> li>*:first-child:before {content: "• "; color: #333; font-family:Tahoma, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14pt; }
+
 
 button {
   border: none;
@@ -249,11 +256,17 @@ button:hover, a:hover {
 
 <body>
 <div class="content">
-  <h3 style="font-size:200%;">Quantum Mechanics</h3>
-  
-  
-<h3 style="font-size:200%;">Under Construction :)</h3>
+  <h3 style="font-size:200%;">Quantum Mechanics I</h3>
+  <br>
+<br>
+  <p style="font-size:130%; color:#708090">Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles. It is the foundation of all quantum physics including quantum chemistry, quantum field theory, quantum technology, and quantum information science. 
+</p>
+<br>
 
+  <ul id="l1"><li data-list-text="•"><p style="padding-left: 10pt;text-indent: -8pt;text-align: left;"><a style="font-size:100%; color:#8B0000" 
+href="https://physics.sharif.edu/~vahid/teachingQM.html" target="_blank">Lecture Note 1 </a></p>
+<p style="font-size:90%;padding-left: 18pt;text-indent: -8pt;text-align: left;">INSTRUCTOR : Prof.Vahid Karimipour</p>
+  
 </div>
 </body>
 
