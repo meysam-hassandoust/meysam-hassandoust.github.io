@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .dot {
@@ -31,7 +31,7 @@ body {
   padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 10px;
-  padding-left: 250px;
+  padding-left: 0px;
 }
 .header {
   padding: 100px;
@@ -117,6 +117,8 @@ body {
   display: block;
 }
 
+
+
 .sticky {
   position: fixed;
   top: 0;
@@ -128,6 +130,47 @@ body {
   padding-top: 60px;
 }
 
+#mySidenav a {
+  position: fixed;
+  left: -150px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 200px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 248px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 308px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 368px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 428px;
+  background-color: #345
+}
+
+#contact1 {
+  top: 488px;
+  background-color: #555
+}
+
 </style>
 </head>
 
@@ -137,13 +180,13 @@ body {
   
 </div>
 
+
 <div id="navbar">
   <a  class="active"href="https://meysam-hassandoust.github.io/">Home</a>
   <a href="https://meysam-hassandoust.github.io/cv">CV</a>
   <a href="https://meysam-hassandoust.github.io/Research">Research</a>
   <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
   <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
-  <a href="https://meysam-hassandoust.github.io/Competition">Competitions</a>
   
 </div>
 <head>
@@ -161,6 +204,29 @@ body {
   color: grey;
   font-size: 18px;
 }
+
+
+p { color: #5D5D5D; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 14pt; }
+.s1 { color: #333; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 20pt; }
+ .s2 { color: #999; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
+ .s3 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; vertical-align: 1pt; }
+ .s5 { color: black; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 16pt; }
+ .s6 { color: #333; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: underline; font-size: 16pt; }
+ h2 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
+ .s7 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
+ .s8 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
+.s80 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 13pt; }
+.s81 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s9 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
+ .s10 { color: #333; font-family:Calibri, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
+.s82 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 10pt; }
+ .h3 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
+ .s11 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11pt; }
+ .s12 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
+ li {display: block; }
+ #l1 {padding-left: 0pt; }
+ #l1> li>*:first-child:before {content: "• "; color: #333; font-family:Tahoma, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 14pt; }
+
 
 button {
   border: none;
@@ -186,43 +252,19 @@ button:hover, a:hover {
 }
 </style>
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="card"style="float: left">
-  <img src="https://github.com/MeysamHassandoost/meysamhassandoost.github.io/blob/main/unnamed1.jpg?raw=true"style="left; width:100%">
-  <h1 style="font-size :110%;">Meysam Hassandoust</h1>
-  <p class="title"style="font-size :90%;">>>Theoretical Physics @SBU</p>
-  <p class="title"style="font-size :90%;">>>May 05, 2000, Tehran, Iran</p>  
-  <p class="title"style="font-size :90%;">>>Quantum Optics, Quantum &nbsp;&nbsp;&nbsp;&nbsp;Information ,
-  Mathematical &nbsp;&nbsp;&nbsp;&nbsp;Physics , Classical Mechanics  , Quantum Foundations </p> 
-  
-  <div style="margin: 24px 0;">
-    <a href="mailto:MeysamHassandoust@gmail.com"><i class="fa fa-envelope"></i></a> 
-    <a href="https://meysam-hassandoust.github.io/"><i class="fa fa-github"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>   
-  </div>
 </div>
 
 <body>
 <div class="content">
-  <h3 style="font-size:200%;">About</h3>
-<p style="font-size:130%; color:#708090">
-Hi! I’m Meysam Hassandoust , a potential theoretical physicist and this website is where I have chosen to exhibit my activities . In general, I aim at finding clear, mathematically formulable answers to fundamental questions in physics
-and of course mathematics . </p>
-<p style="font-size:130%;color:#708090">Here I will try to mention some areas of work that I am interested in and I will address them in the <a href="https://meysam-hassandoust.github.io/Research">Research</a> section.</p>
+  <h3 style="font-size:200%;">Physics student competitions</h3>
+  <br>
+<br>
+  <p style="font-size:130%; color:#708090">Mathematical physics refers to the development of mathematical methods for application to problems in physics. The Journal of Mathematical Physics defines the field as "the application of mathematics to problems in physics and the development of mathematical methods suitable for such applications and for the formulation of physical theories". An alternative definition would also include those mathematics that are inspired by physics (also known as physical mathematics).</p>
+<br>
 
-<p style="font-size:130%;color:#708090">On the other hand, with your cooperation, we try to raise questions every week that we can solve with each other's help,
-  and in the future, I hope that competitions like the Student Olympiad will be held, which will make us all ingenuity and creativity 
-  in solving interesting problems.
-In the section of this site, <a href="https://meysam-hassandoust.github.io/problems">Problems</a>, materials and 
-  questions that I find interesting will be posted, and after a while, prizes will be determined for the first people who solved the 
-  questions and sent them to <a href="mailto:MeysamHassandoust@gmail.com">my email</a>.</p>
 
-<p style="font-size:130%;color:#708090">In the <a href="https://meysam-hassandoust.github.io/notes">Notes</a> section, there are lecture notes and videos for Bachelor and Master's courses by professors from any university, and it gives students the opportunity to select the desired course have lecture notes, videos, mid-semester and end-semester exams with answers from any professor who has taught that course. I would be happy if you have lecture notes or video lectures of a lesson, with the consent of the professor of that lesson, send them to <a href="mailto:MeysamHassandoust@gmail.com">my email</a>.</p>
-<p style="font-size:130%;color:#708090">Finally, I would like to thank my dear friends, Rasoul Feyzi and Mohammad Mahdi Nasrollahzadeh for their cooperation and giving creative ideas and collecting lecture notes and videos.</p>
-
+    
 </div>
-  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-fd0276e3-0d27-431c-8083-42cc6504b400"></div>
 </body>
 
 <script>
