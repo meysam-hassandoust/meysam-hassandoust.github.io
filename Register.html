@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 	<style>
         * { box-sizing: border-box; }
-        div {
+
+div {
             padding: 10px;
             background-color: #f6f6f6;
             overflow: hidden;
@@ -25,59 +25,24 @@
             cursor: pointer;
             padding: 7px;
         }
-  </style>
+
+</style>
 </head>
 
-<body>
-    <div>
-        <div><input type="text" id="txtName" placeholder="Enter your first name" /></div>
-        <div><input type="text" id="txtAge" placeholder="Enter your last name" /></div>
-	<div><input type="text" id="txtEmail" placeholder="Enter your student number" /></div>
-        <div><input type="text" id="txtEmail" placeholder="Enter your email address" /></div>
-	<div><input type="text" id="txtEmail" placeholder="Enter your bachelor's degree" /></div>
-        
+<form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbwzqCEjLNVT6ZViMoyT741xzaxW5f-59wZVgpv0PWVyPEGxgsUa5ps3xDUuPAnlGnQUAA/exec"
+>
+  
+  
+        <div><input name="First Name" type="text" placeholder="First Name" required></div>
+	<div><input name="Last Name"type="text"  placeholder="Last Name" /></div>
+	<div><input name="Email" type="text" placeholder="Email" required></div>
+        <div><input name="Student Number"type="text"  placeholder="Student Number" /></div>
+<div>
+  <button >Register</button>
+</div>
+</form>
 
-        
-        <div>
-            <input type="button" id="bt" value="Register" onclick="saveFile()" />
-        </div>
-    </div>
 </body>
-<script>
-    let saveFile = () => {
-    	
-        
-    	const name = document.getElementById('txtName');
-        const age = document.getElementById('txtAge');
-        const email = document.getElementById('txtEmail');
-        const country = document.getElementById('selCountry');
-        const msg = document.getElementById('msg');
-        
-        
-        let data = 
-            '\r Name: ' + name.value + ' \r\n ' + 
-            'Age: ' +age.value + ' \r\n ' + 
-            'Email: ' + email.value + ' \r\n ' + 
-            'Country: ' + country.value + ' \r\n ' + 
-            'Message: ' + msg.value;
-        
-        
-        const textToBLOB = new Blob([data], { type: 'text/plain' });
-        const sFileName = 'formData.txt';	   
-
-        let newLink = document.createElement("a");
-        newLink.download = sFileName;
-
-        if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
-        }
-        else {
-            newLink.href = window.URL.createObjectURL(textToBLOB);
-            newLink.style.display = "none";
-            document.body.appendChild(newLink);
-        }
-
-        newLink.click(); 
-    }
-</script>
 </html>
