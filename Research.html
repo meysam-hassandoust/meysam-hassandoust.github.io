@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .dot {
@@ -31,14 +31,16 @@ body {
   padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 10px;
-  padding-left: 0px;
+  padding-left: 250px;
 }
 .header {
-  padding: 100px;
+  padding: 80px;
   text-align: center;
-  background:  #031814;
+  background:  #031819;
   color: white;
   font-size: 30px;
+
+
 }
 
 #navbar {
@@ -117,8 +119,6 @@ body {
   display: block;
 }
 
-
-
 .sticky {
   position: fixed;
   top: 0;
@@ -130,46 +130,109 @@ body {
   padding-top: 60px;
 }
 
-#mySidenav a {
-  position: fixed;
-  left: -150px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 200px;
-  text-decoration: none;
-  font-size: 15px;
-  color: white;
-  border-radius: 0 5px 5px 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#mySidenav a:hover {
-  left: 0;
+.base {
+  width: 5px;
+  border-top: 5px solid gray;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  padding: 0 0 10px;
 }
 
-#about {
-  top: 248px;
-  background-color: #04AA6D;
+.holder {
+  width: 3px;
+  height: 0px;
+  background: black;
+  margin: auto;
+  border-radius: 0 0 50% 50%;
 }
 
-#blog {
-  top: 308px;
-  background-color: #2196F3;
+.thread {
+  display: inline-block;
+  width: 1px;
+  height: 200px;
+  background: black;
+  border-radius: 5px;
+  position: relative;
+  transform-origin: 50% 0;
+  animation: moveIt 2.5s ease-in-out infinite;
 }
 
-#projects {
-  top: 368px;
-  background-color: #f44336;
+.thread:after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: red;
+  border: 2px solid white;
+  top: -4.5px;
+  left: -3.5px;
 }
 
-#contact {
-  top: 428px;
-  background-color: #345
+.knob {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: -1px;
+  left: -0px;
+  border: 2px solid rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  border-bottom: 20px solid transparent;
 }
 
-#contact1 {
-  top: 488px;
-  background-color: #555
+.pendulum {
+  width: 20px;
+  height: 20px;
+  background: -moz-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -webkit-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -o-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: -ms-radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  background: radial-gradient(circle at 70% 35%, white, #66d63e 30%, #40a31d 50%);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: -9px;
 }
+
+.shadow {
+  width: 30px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin: 50px auto 0;
+  animation: moveShade 1.25s ease-in-out alternate infinite;
+}
+
+@keyframes moveIt {
+  0%, 100% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes moveShade {
+  0% {
+    transform: translateX(-220px) scale(1.4, .5);
+    filter: blur(20px);
+  }
+  50% {
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateX(220px) scale(1.4, .5);
+    filter: blur(20px);
+  }
+}
+
 
 </style>
 </head>
@@ -182,12 +245,8 @@ body {
 
 
 <div id="navbar">
-  <a href="https://meysam-hassandoust.github.io/">Home</a>
-  <a href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <a  class="active"href="https://meysam-hassandoust.github.io/Research">Research</a>
-  <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
-  <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
-  <a href="https://meysam-hassandoust.github.io/Competition">Competitions</a>
+  <a  href="https://meysam-hassandoust.github.io/">Home</a>
+  <a class="active"href="https://meysam-hassandoust.github.io/Research">Research</a>
   
 </div>
 <head>
@@ -254,78 +313,27 @@ button:hover, a:hover {
 </style>
 </head>
 </div>
+<div class="card"style="float: left">
+
+<div class="base">
+  <div class="holder"></div>
+  <div class="thread">
+    <div class="knob"></div>
+    <div class="pendulum"></div>
+  </div>
+  <div class="shadow"></div>
+</div>
+</div>
 
 <body>
 <div class="content">
+<p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">
+</p><p style="text-indent: 0pt;text-align: left;"><br/></p>
+<p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">
+</p><p style="text-indent: 0pt;text-align: left;"><br/></p>
   <h3 style="font-size:200%;">Research</h3>
   
-  <p style="font-size:130%; color:#708090">Here I write about things that I am personally interested in researching, and if I have written a report on a topic, I share it here.
-If you have any comments, suggestions or mistakes, I would be happy to let you know through the communication channels provided. 
-</p>
-
-  <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Cosmology 
-
-
-                                                    
-<span class="s9">Aug 2023 ‑ Present</span></p><ul id="l1">
   
-
-<li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">WaveFunction of the Universe in Anisotropic Minisuperspace
-Model.
-<a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/Research/WaveFunction_of_the_Universe_in_Anisotropic_Minisuperspace_Model.pdf" target="_blank">here</a>
-
-  </li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Analytical solution of the Dirac equation near the event horizon of a charged black hole.
-<a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/Research/Analytical_solution_of_the_Dirac_equation_near_the_event_horizon_of_a_charged_black_hole.pdf" target="_blank">here</a>
-    
-</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University       <span class="s7">Tehran, Iran</span></h2>
-  
-
-
-  
-<p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Mechanics 
-
-
-                                                    
-<span class="s9">Sep 2022 ‑ Jul 2023</span></p>
-
-</li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle.<a style="font-size:100%; color:#8B0000" href="http://dx.doi.org/10.13140/RG.2.2.34977.17765" target="_blank">here</a>
-
-<ul id="l1"><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry in Quantum Mechanics for Dirac equation in FRW space time. <a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/Research/بررسی_ابرتقارن_برای_معادله_ی_دیراک_در_فضا_زمان_FRW (3).pdf" target="_blank">here</a>
-</p>
-
-</li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry time dependent in Quantum Mehcanics.
-<a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/Research/SUSYQM.pdf" target="_blank">here</a>
-
-</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
-
-
- <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Optics
-
-
-<span class="s9">Jun 2022 ‑ Sep 2022</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Rydberg RF Receiver Operation to Track RF Signal Fading and Frequency Drift .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Electromagnetically Induced Transparency (EIT) .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Atom based RF electric field sensing .</p></li><li data-list-text="•">
-
-<p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Investigating the phenomenon of anti‑resonance and resonance in coupled oscillators and comparing the Fano phenomenon in classical and quantum states .<a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/notes/012.pdf" target="_blank">here</a></p></li><li data-list-text="•">
-
-<p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Analytical solution of N Coupled Oscillators in Classical Mechancis . <a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/notes/011.pdf" target="_blank">here</a>
-</p>
-<p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
-
-
-
- <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Mathematical Physics                                                    
-
-
-<span class="s9">Jun 2022 ‑ Apr 2023</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Pseudo‑Supersymmetry time dependent in Quantum Mechanics</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Pseudo‑Hermitian Hamiltonian Representation Of Quantum Mechanics .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Pseudo‑Supersymmetry in Quantum Mechanics .</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
-
-
-
- <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Computational Work                                                     
-
-
-
-
-<span class="s9">Jun 2020 ‑ Jul 2022</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical Approach (Monte Carlo Method) For Feynman Path Integral . (Basic)</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical Approach For Schrödinger Equation .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of Laplace Equation in Electromagnetic .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of Ising Model .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of the Three‑Body Problem .</p><p style="text-indent: 0pt;text-align: left;"><br/></p>
-
 </div>
 </body>
 
