@@ -115,7 +115,6 @@
       <a href="https://www.linkedin.com/in/meyssam-hassandoust-40b422327" target="_blank"><i class="fa fa-linkedin"></i></a>
       <a href="mailto:MeysamHassandoust@gmail.com"><i class="fa fa-envelope"></i></a>
     </div>
-    <div class="visitor-counter" id="visitor-count">Visitors: 0</div>
     <a href="#top" id="back-to-top" aria-label="Back to top">↑</a>
   </footer>
 
@@ -143,15 +142,14 @@
     });
 
     // Simple Visitor Counter using localStorage
-    if (localStorage.getItem('visitorCount')) {
-      let count = parseInt(localStorage.getItem('visitorCount'));
-      count++;
-      localStorage.setItem('visitorCount', count);
-      document.getElementById('visitor-count').textContent = `Visitors: ${count}`;
-    } else {
-      localStorage.setItem('visitorCount', 1);
-      document.getElementById('visitor-count').textContent = 'Visitors: 1';
-    }
-  </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LYQ3Y4D4YB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LYQ3Y4D4YB');
+</script>
 </body>
 </html>
