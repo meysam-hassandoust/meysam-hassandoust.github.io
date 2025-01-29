@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     /* Minified CSS for better performance */
-    body{margin:0;font-family:'Times New Roman',serif;line-height:1.6;color:#333}h1,h2,h3{color:#414141}p{font-size:1rem;color:#555}a{color:#0077b5;text-decoration:none}a:hover{text-decoration:underline}.header{text-align:center;padding:0;background-color:#f9f9f9}.header img{max-width:100%;height:auto;border-radius:8px}#navbar{overflow:hidden;background-color:#333;position:sticky;top:0;z-index:1000;margin-top:0}#navbar a{float:left;font-size:1rem;color:white;text-align:center;padding:14px 16px;text-decoration:none}#navbar a:hover{background-color:#555}#navbar a.active{background-color:#0077b5}.content{padding:20px}.content h3{font-size:1.8rem;margin-top:20px}.content p{font-size:1rem;line-height:1.6}.content ul{padding-left:20px}.content ul li{margin-bottom:10px}footer{text-align:center;padding:20px;background-color:#f1f1f1;margin-top:40px}footer p{font-size:0.9rem;color:#555}footer .social-links a{margin:0 10px;font-size:1.2rem}@media (max-width:768px){.header h1{font-size:1.5rem}.content h3{font-size:1.5rem}.content p{font-size:0.9rem}#navbar a{font-size:0.9rem;padding:10px 12px}}@media (max-width:480px){.header h1{font-size:1.2rem}.content h3{font-size:1.2rem}.content p{font-size:0.8rem}#navbar a{font-size:0.8rem;padding:8px 10px}}#back-to-top{position:fixed;bottom:20px;right:20px;background-color:#0077b5;color:white;width:40px;height:40px;border-radius:50%;text-align:center;line-height:40px;text-decoration:none;display:none;z-index:1000}#back-to-top:hover{background-color:#005f9e}
+    body{margin:0;font-family:'Times New Roman',serif;line-height:1.6;color:#333}h1,h2,h3{color:#414141}p{font-size:1rem;color:#555}a{color:#0077b5;text-decoration:none}a:hover{text-decoration:underline}.header{text-align:center;padding:0;background-color:#f9f9f9}.header img{max-width:100%;height:auto;border-radius:8px}#navbar{overflow:hidden;background-color:#333;position:sticky;top:0;z-index:1000;margin-top:0}#navbar a{float:left;font-size:1rem;color:white;text-align:center;padding:14px 16px;text-decoration:none}#navbar a:hover{background-color:#555}#navbar a.active{background-color:#0077b5}.content{padding:20px}.content h3{font-size:1.8rem;margin-top:20px}.content p{font-size:1rem;line-height:1.6}.content ul{padding-left:20px}.content ul li{margin-bottom:10px}footer{text-align:center;padding:20px;background-color:#f1f1f1;margin-top:40px}footer p{font-size:0.9rem;color:#555}footer .social-links a{margin:0 10px;font-size:1.2rem}@media (max-width:768px){.header h1{font-size:1.5rem}.content h3{font-size:1.5rem}.content p{font-size:0.9rem}#navbar a{font-size:0.9rem;padding:10px 12px}}@media (max-width:480px){.header h1{font-size:1.2rem}.content h3{font-size:1.2rem}.content p{font-size:0.8rem}#navbar a{font-size:0.8rem;padding:8px 10px}}#back-to-top{position:fixed;bottom:20px;right:20px;background-color:#0077b5;color:white;width:40px;height:40px;border-radius:50%;text-align:center;line-height:40px;text-decoration:none;display:none;z-index:1000}#back-to-top:hover{background-color:#005f9e}.visitor-counter{font-size:1rem;color:#555;margin-top:10px}
   </style>
   <title>Theoretical Physicist</title>
 </head>
@@ -16,9 +16,7 @@
   <a id="top"></a> <!-- Anchor for Back to Top -->
 
   <!-- Header -->
-  <header class="header">
-    <!-- No name here -->
-  </header>
+  <header class="header"></header>
 
   <!-- Navbar -->
   <div id="navbar">
@@ -30,7 +28,7 @@
   <div class="content">
     <h3 style="font-size:200%;">Research</h3>
     <p style="font-size:130%; color:#708090">
-      In this section, I will put the articles and lecture notes that are related to my interests in the undergraduate or graduate level and that I encountered. In the some of fields like quantum gravity and quantum information, some of the articles are on <a href="https://lightsheet.berkeley.edu/">Raphael Bousso's homepage</a>, which is much more detailed about the articles that a student should read in the field of theoretical cosmology and quantum gravity. Maybe some articles contain wrong and old information after a while. Here I only post articles that I have read, which means that they may be old and wrong.
+In this section, I will put the articles and lecture notes that are related to my interests in the undergraduate or graduate level and that I encountered. In the some of fields like quantum gravity and quantum information, some of the articles are on <a href="https://lightsheet.berkeley.edu/">Raphael Bousso's homepage</a>, which is much more detailed about the articles that a student should read in the field of theoretical cosmology and quantum gravity. Maybe some articles contain wrong and old information after a while. Here I only post articles that I have read, which means that they may be old and wrong.
     </p>
 
     <h2>JT Gravity and Random Matrix Integral</h2>
@@ -78,6 +76,7 @@
     <p class="s8"><a href="https://arxiv.org/abs/1603.07691" target="_blank">Supersymmetric quantum mechanics and topology</a></p>
     <p class="s8"><a href="https://arxiv.org/abs/1207.6799" target="_blank">Nonlinear Supersymmetric Quantum Mechanics: concepts and realizations</a></p>
   </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -87,6 +86,7 @@
       <a href="https://www.linkedin.com/in/meyssam-hassandoust-40b422327" target="_blank"><i class="fa fa-linkedin"></i></a>
       <a href="mailto:MeysamHassandoust@gmail.com"><i class="fa fa-envelope"></i></a>
     </div>
+    <div class="visitor-counter" id="visitor-count">Visitors: 0</div>
     <a href="#top" id="back-to-top" aria-label="Back to top">↑</a>
   </footer>
 
@@ -112,6 +112,17 @@
         behavior: 'smooth',
       });
     });
+
+    // Simple Visitor Counter using localStorage
+    if (localStorage.getItem('visitorCount')) {
+      let count = parseInt(localStorage.getItem('visitorCount'));
+      count++;
+      localStorage.setItem('visitorCount', count);
+      document.getElementById('visitor-count').textContent = `Visitors: ${count}`;
+    } else {
+      localStorage.setItem('visitorCount', 1);
+      document.getElementById('visitor-count').textContent = 'Visitors: 1';
+    }
   </script>
 </body>
 </html>
