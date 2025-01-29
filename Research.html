@@ -86,7 +86,7 @@ In this section, I will put the articles and lecture notes that are related to m
       <a href="https://www.linkedin.com/in/meyssam-hassandoust-40b422327" target="_blank"><i class="fa fa-linkedin"></i></a>
       <a href="mailto:MeysamHassandoust@gmail.com"><i class="fa fa-envelope"></i></a>
     </div>
-    <div class="visitor-counter" id="visitor-count">Visitors: 0</div>
+    
     <a href="#top" id="back-to-top" aria-label="Back to top">↑</a>
   </footer>
 
@@ -113,16 +113,6 @@ In this section, I will put the articles and lecture notes that are related to m
       });
     });
 
-    // Simple Visitor Counter using localStorage
-    if (localStorage.getItem('visitorCount')) {
-      let count = parseInt(localStorage.getItem('visitorCount'));
-      count++;
-      localStorage.setItem('visitorCount', count);
-      document.getElementById('visitor-count').textContent = `Visitors: ${count}`;
-    } else {
-      localStorage.setItem('visitorCount', 1);
-      document.getElementById('visitor-count').textContent = 'Visitors: 1';
-    }
   </script>
 </body>
 </html>
