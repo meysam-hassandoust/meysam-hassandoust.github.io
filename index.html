@@ -1,157 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LYQ3Y4D4YB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYQ3Y4D4YB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LYQ3Y4D4YB');
+  </script>
 
-  gtag('config', 'G-LYQ3Y4D4YB');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theoretical Physics Student</title>
   <meta name="description" content="Theoretical physics student">
   <meta name="keywords" content="Theoretical physics student">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <style>
-    /* Minified CSS for better performance */
-    body{margin:0;font-family:'Times New Roman',serif;line-height:1.6;color:#333}h1,h2,h3{color:#414141}p{font-size:1rem;color:#555}a{color:#0077b5;text-decoration:none}a:hover{text-decoration:underline}.header{text-align:center;padding:0;background-color:#f9f9f9}.header img{max-width:100%;height:auto;border-radius:8px}#navbar{overflow:hidden;background-color:#333;position:sticky;top:0;z-index:1000;margin-top:0}#navbar a{float:left;font-size:1rem;color:white;text-align:center;padding:14px 16px;text-decoration:none}#navbar a:hover{background-color:#555}#navbar a.active{background-color:#0077b5}.card{box-shadow:0 4px 8px rgba(0,0,0,0.1);max-width:100%;margin:20px auto;text-align:center;padding:20px;background-color:#fff}.card img{width:145px;height:150px;border-radius:50%;margin-bottom:15px;loading:lazy}.card h1{font-size:1.5rem;margin:10px 0}.card p{font-size:0.9rem;color:#777}.card .social-links{margin:15px 0}.card .social-links a{margin:0 10px;font-size:1.2rem}.content{padding:20px}.content h3{font-size:1.8rem;margin-top:20px}.content p{font-size:1rem;line-height:1.6}.content ul{padding-left:20px}.content ul li{margin-bottom:10px}.cv-section{font-style:italic}.cv-section h3{font-style:normal;font-size:1.5rem;font-weight:bold;margin-bottom:10px}.cv-section h4{font-style:normal;font-size:1.2rem;font-weight:bold;margin-top:15px;margin-bottom:5px}.cv-section p,.cv-section ul{font-size:1rem;margin-top:5px;margin-bottom:10px}footer{text-align:center;padding:20px;background-color:#f1f1f1;margin-top:40px}footer p{font-size:0.9rem;color:#555}footer .social-links a{margin:0 10px;font-size:1.2rem}@media (max-width:768px){.header h1{font-size:1.5rem}.card{padding:15px}.card img{width:120px;height:120px}.card h1{font-size:1.2rem}.card p{font-size:0.8rem}.content h3{font-size:1.5rem}.content p{font-size:0.9rem}#navbar a{font-size:0.9rem;padding:10px 12px}}@media (max-width:480px){.header h1{font-size:1.2rem}.card img{width:100px;height:100px}.card h1{font-size:1rem}.card p{font-size:0.7rem}.content h3{font-size:1.2rem}.content p{font-size:0.8rem}#navbar a{font-size:0.8rem;padding:8px 10px}}#back-to-top{position:fixed;bottom:20px;right:20px;background-color:#0077b5;color:white;width:40px;height:40px;border-radius:50%;text-align:center;line-height:40px;text-decoration:none;display:none;z-index:1000}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #ffffff);
+      color: #333;
+      line-height: 1.7;
+    }
+    h1,h2,h3,h4 {font-weight:700;color:#222}
+    a {color:#0077b5;text-decoration:none;transition:.3s}
+    a:hover {color:#005f8d}
+
+    /* Cover Banner */
+    .cover-banner {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 0px;
+    }
+
+    /* Navbar below banner */
+    #navbar {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display:flex;justify-content:center;
+    }
+    #navbar a {
+      padding:15px 20px;font-weight:600;color:#444;
+    }
+    #navbar a.active {color:#0077b5}
+
+    /* Card - Left Side */
+    .card {
+      background:#fff;
+      border-radius:15px;
+      padding:20px;
+      margin:30px;
+      width:300px;
+      text-align:center;
+      box-shadow:0 6px 16px rgba(0,0,0,0.12);
+      transition:.3s;
+      float:left;
+    }
+    .card:hover {transform:translateY(-4px)}
+    .card img {
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      box-shadow:0 4px 12px rgba(0,0,0,0.15);
+      margin-bottom:10px;
+      transition:.3s;
+    }
+    .card img:hover {transform:scale(1.05)}
+    .card h1 {font-size:1.6rem;margin:8px 0}
+    .card p {color:#666;font-size:0.9rem}
+    .card .social-links a {
+      margin:0 8px;font-size:1.2rem;color:#666;
+    }
+    .card .social-links a:hover {color:#0077b5}
+
+    /* Content - Right Side */
+    .content {
+      max-width:900px;
+      margin-left:360px;
+      padding:20px;
+    }
+    .content h2 {
+      font-size:1.9rem;margin:20px 0;
+      position:relative;display:inline-block;
+    }
+    .content h2::after {
+      content:"";position:absolute;left:0;bottom:-6px;
+      width:60%;height:3px;background:#0077b5;border-radius:2px;
+    }
+
+    /* Timeline */
+    .timeline {position:relative;margin:30px 0;padding-left:30px}
+    .timeline::before {
+      content:"";position:absolute;left:12px;top:0;bottom:0;
+      width:2px;background:#0077b5;
+    }
+    .timeline li {
+      position: relative;
+      list-style: none;
+      margin-bottom: 25px;
+      padding-left: 25px;
+    }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border: 3px solid #0077b5;
+      border-radius: 50%;
+    }
+
+    /* Footer */
+    footer {
+      clear: both;
+      text-align:center;padding:30px;
+      background:#f9f9f9;margin-top:60px;
+    }
+    footer p {color:#666;font-size:0.9rem}
+    footer .social-links a {margin:0 10px;font-size:1.2rem;color:#666}
+    footer .social-links a:hover {color:#0077b5}
+
+    /* Back to Top */
+    #back-to-top {
+      position:fixed;bottom:20px;right:20px;
+      background:#0077b5;color:#fff;width:45px;height:45px;
+      border-radius:50%;text-align:center;line-height:45px;
+      font-size:1.2rem;font-weight:bold;
+      text-decoration:none;display:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+      transition:.3s;
+    }
+    #back-to-top:hover {background:#005f8d}
+
+    @media(max-width:1024px){
+      .card{float:none;margin:auto;width:90%;}
+      .content{margin-left:0;padding:15px;}
+      .cover-banner {height:150px;}
+    }
   </style>
-  <title>Theoretical physics student</title>
 </head>
 <body>
-  <a id="top"></a> <!-- Anchor for Back to Top -->
+  <a id="top"></a>
 
-  <!-- Header -->
-  <header class="header">
-    <!-- No name here -->
-  </header>
+  <!-- Cover Banner -->
+  <img src="https://i.redd.it/dyq7u8w87gr21.jpg" 
+       alt="String Theory" class="cover-banner">
 
-  <!-- Navbar -->
+  <!-- Navbar BELOW Banner -->
   <nav id="navbar">
     <a class="active" href="https://meysam-hassandoust.github.io/">Home</a>
-    <a href="https://meysam-hassandoust.github.io/Research">Research</a>
   </nav>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Card -->
-    <section class="card">
-      <img src="https://github.com/meysam-hassandoust/meysam-hassandoust.github.io/blob/main/studentPhoto_LE_upscale_balanced_x4.jpg?raw=true" alt="Profile Picture" loading="lazy">
-      <h1>Meyssam Hassandoust</h1>
-      <p class="title">Theoretical Physics @SUT</p>
-      <p>May 05, 2001, Tehran, Iran</p>
-      <p>Mathematical Physics, Quantum Field Theory, String Theory</p>
-      <div class="social-links">
-        <a href="mailto:MeysamHassandoust@gmail.com" aria-label="Email"><i class="fa fa-envelope"></i></a>
-        <a href="https://meysam-hassandoust.github.io/" aria-label="GitHub"><i class="fa fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/meyssam-hassandoust-40b422327" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="content">
-      <h2>About</h2>
-      <p>Hi! I’m Meyssam Hassandoust, a potential theoretical physicist, and this website is where I introduce my activities and interests. I am most interested in the mathematical part of physics, which can include a part of condensed matter or more fundamental theories such as string theory or even in gravity such as AdS/CFT and other fields of physics.</p>
-
-      <!-- CV Section -->
-      <div class="cv-section">
-        <h3>CV</h3>
-        <!-- Education -->
-        <h4>Education</h4>
-        <ul>
-          <li><strong>Sharif University of Technology</strong> - M.Sc in Physics (2024 - Present)</li>
-          <li><strong>Shahid Beheshti University</strong> - B.Sc in Physics (2019 - 2024)</li>
-          <li><strong>Atomic Energy High School</strong> - High School Diploma (2016 - 2019)</li>
-        </ul>
-
-        <!-- Research Experience -->
-        <h4>Research Experience</h4>
-        <ul>
-          <li><strong>A generalization of the Selberg zeta function for flat space cosmologies</strong> - Supervisor: Prof. Reza Fareghbal</li>
-          <li><strong>Topological aspects of the Berry phase</strong> - Supervisor: Prof. Siamak Sadat Gousheh</li>
-          <li><strong><a href="https://meysam-hassandoust.github.io/files/Research/Group_Theory_and_Irreducible_Representations_of_the_Poincare__Group (1).pdf" target="_blank">Group theory and irreducible representations of the Poincaré group</a></strong>
- - Supervisor: Prof. Siamak Sadat Gousheh</li>
-          <li><strong><a href= " https://meysam-hassandoust.github.io/files/Research/Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle.pdf" target="_blank">Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle</a></strong> - Supervisor: Prof. Siamak Sadat Gousheh</li>
-          <li><strong><a href=" https://meysam-hassandoust.github.io/files/Research/بررسی_ابرتقارن_برای_معادله_ی_دیراک_در_فضا_زمان_FRW (3).pdf" target=_blank">Supersymmetry in Quantum Mechanics for Dirac equation in FRW space-time</a></strong> - Supervisor: Prof. Siamak Sadat Gousheh</li>
-        </ul>
-
-        <!-- Teaching Assistant -->
-        <h4>Teaching Assistant</h4>
-        <ul>
-          <li><strong>Physics Laboratory I</strong> - Sharif University of Technology (Fall 2024)</li>
-          <li><strong>Mathematical Physics I</strong> - Shahid Beheshti University (Fall 2023)</li>
-          <li><strong>Quantum Mechanics I</strong> - Shahid Beheshti University (Fall 2022)</li>
-          <li><strong>General Physics I</strong> - Shahid Beheshti University (Fall 2022)</li>
-          <li><strong>Mathematical Physics II</strong> - Shahid Beheshti University (Spring 2021)</li>
-	  <li><strong>Analytical Mechanics II</strong> - Shahid Beheshti University (Spring 2021)</li>
-	  <li><strong>Mathematical Physics I</strong> - Shahid Beheshti University (Fall 2020)</li>
-        </ul>
-
-        <!-- Achievements -->
-        <h4>Achievements</h4>
-        <ul>
-          <li>Ranked 14th in the university student's national Physics Olympiad (2024)</li>
-          <li>Ranked 8th in the university student's national Physics Olympiad (2023)</li>
-          <li>Ranked 18th in the national master studies entrance exam (2024)</li>
-          <li>Ranked 14th in the national master studies entrance exam (2023)</li>
-          <li>Ranked 6th in the Messie Marathon (2019)</li>
-          <li>Winner of National Gold Medal in WMTC Mathematics Competition (2014)</li>
-        </ul>
-
-        <!-- Skills -->
-        <h4>Skills</h4>
-        <ul>
-          <li><strong>Programming:</strong> Python, C/C++, HTML/CSS, Mathematica, Word, Excel</li>
-          <li><strong>Soft Skills:</strong> Time Management, Teamwork, Problem-solving</li>
-        </ul>
-
-        <!-- Languages -->
-        <h4>Languages</h4>
-        <ul>
-          <li><strong>English:</strong> Upper Intermediate</li>
-          <li><strong>Persian:</strong> Native proficiency</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; <span id="year"></span> Meyssam Hassandoust. All rights reserved.</p>
+  <!-- Profile Card -->
+  <section class="card">
+    <img src="https://github.com/meysam-hassandoust/meysam-hassandoust.github.io/blob/main/studentPhoto_LE_upscale_balanced_x4.jpg?raw=true" 
+         alt="Profile Picture" loading="lazy">
+    <h1>Meyssam Hassandoust</h1>
+    <p class="title">Theoretical Physics @ SUT</p>
+    <p>May 05, 2001 — Tehran, Iran</p>
+    <p>Mathematical Physics, String Theory</p>
     <div class="social-links">
-      <a href="https://github.com/MeysamHassandoost" target="_blank"><i class="fa fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/meyssam-hassandoust-40b422327" target="_blank"><i class="fa fa-linkedin"></i></a>
       <a href="mailto:MeysamHassandoust@gmail.com"><i class="fa fa-envelope"></i></a>
+      <a href="https://meysam-hassandoust.github.io/"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/meyssam-hassandoust-40b422327"><i class="fa fa-linkedin"></i></a>
     </div>
-    <a href="#top" id="back-to-top" aria-label="Back to top">↑</a>
-  </footer>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <h2>About</h2>
+    <p>Hi! I’m Meyssam Hassandoust, a student of theoretical physics. I am most interested in the mathematical physics, string theory, and gravity.</p>
+
+    <!-- CV Section -->
+    <div class="cv-section">
+      <h2>Curriculum Vitae</h2>
+
+      <h3>Education</h3>
+      <ul class="timeline">
+        <li><strong>Sharif University of Technology</strong> – M.Sc in Physics (2024 – Present)</li>
+        <li><strong>Shahid Beheshti University</strong> – B.Sc in Physics (2019 – 2024)</li>
+        <li><strong>Atomic Energy High School</strong> – Diploma (2016 – 2019)</li>
+      </ul>
+
+      <h3>Research Experience</h3>
+      <ul class="timeline">
+        <li><strong>A generalization of the Selberg zeta function for flat space cosmologies</strong> – Supervisor: Prof. Reza Fareghbal</li>
+        <li><strong>Topological aspects of the Berry phase</strong> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+        <li><a href="https://meysam-hassandoust.github.io/files/Research/Group_Theory_and_Irreducible_Representations_of_the_Poincare__Group (1).pdf" target="_blank">Group theory and irreducible representations of the Poincaré group</a> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+        <li><a href="https://meysam-hassandoust.github.io/files/Research/Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle.pdf" target="_blank">Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle</a> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+        <li><a href="https://meysam-hassandoust.github.io/files/Research/بررسی_ابرتقارن_برای_معادله_ی_دیراک_در_فضا_زمان_FRW (3).pdf" target="_blank">Supersymmetry in Quantum Mechanics for Dirac equation in FRW space-time</a> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+      </ul>
+
+      <h3>Teaching Assistant</h3>
+      <ul class="timeline">
+        <li><strong>Physics Laboratory I</strong> – Sharif University of Technology (Fall 2024)</li>
+        <li><strong>Mathematical Physics I</strong> – Shahid Beheshti University (Fall 2023)</li>
+        <li><strong>Quantum Mechanics I</strong> – Shahid Beheshti University (Fall 2022)</li>
+        <li><strong>General Physics I</strong> – Shahid Beheshti University (Fall 2022)</li>
+        <li><strong>Mathematical Physics II</strong> – Shahid Beheshti University (Spring 2021)</li>
+        <li><strong>Analytical Mechanics II</strong> – Shahid Beheshti University (Spring 2021)</li>
+        <li><strong>Mathematical Physics I</strong> – Shahid Beheshti University (Fall 2020)</li>
+      </ul>
+
+      <h3>Achievements</h3>
+      <ul class="timeline">
+        <li>Ranked 14th – National Physics Olympiad for University Students (2024)</li>
+        <li>Ranked 8th – National Physics Olympiad for University Students (2023)</li>
+        <li>Ranked 18th – National Master Entrance Exam (2024)</li>
+        <li>Ranked 14th – National Master Entrance Exam (2023)</li>
+        <li>Ranked 6th – Messie Marathon (2019)</li>
+        <li>National Gold Medal – WMTC Mathematics Competition (2014)</li>
+      </ul>
+
+      <h3>Languages</h3>
+      <ul class="timeline">
+        <li><strong>English:</strong> Upper Intermediate</li>
+        <li><strong>Persian:</strong> Native</li>
+      </ul>
+    </div>
+  </section>
+
+  
 
   <script>
-     // Dynamic Year in Footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Back to Top Button
     window.onscroll = function () {
-      const backToTop = document.getElementById('back-to-top');
-      if (window.pageYOffset > 100) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
+      const btn = document.getElementById('back-to-top');
+      btn.style.display = window.pageYOffset > 100 ? 'block' : 'none';
     };
-
-    // Smooth Scrolling for Back to Top
     document.getElementById('back-to-top').addEventListener('click', function (e) {
       e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
+      window.scrollTo({top:0,behavior:'smooth'});
     });
-
   </script>
 </body>
 </html>
