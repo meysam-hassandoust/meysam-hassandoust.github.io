@@ -1,484 +1,284 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.dot {
-  height: 10px;
-  width: 10px;
-  background-color: black;
-  border-radius: 50%;
-  display: inline-block;
-}
-img {
-  border-radius: 8px;
-}
-.dot1 {
-  height: 10px;
-  width: 10px;
-  background-color: gray;
-  border-radius: 10%;
-  display: inline-block;
-}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYQ3Y4D4YB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LYQ3Y4D4YB');
+  </script>
 
-body {
-  margin: 0;
-  font-family: 'Times New Roman', serif;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theoretical Physics Student</title>
+  <meta name="description" content="Theoretical physics student">
+  <meta name="keywords" content="Theoretical physics student">
 
-.content {
-  padding-top: 0px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 250px;
-}
-.header {
-  padding: 100px;
-  text-align: center;
-  background:  #031814;
-  color: white;
-  font-size: 30px;
-}
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-#navbar {
-  overflow: hidden;
-  background-color: #333;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #ffffff);
+      color: #333;
+      line-height: 1.7;
+    }
+    h1,h2,h3,h4 {font-weight:700;color:#222}
+    a {color:#0077b5;text-decoration:none;transition:.3s}
+    a:hover {color:#005f8d}
 
-#navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    /* Cover Banner */
+    .cover-banner {
+      width: 100%;
+      height: 350px;
+      object-fit: ;
+      display: block;
+      margin-bottom: 0px;
+    }
 
-#navbar a:hover {
-  border-bottom: 3px solid red;
-}
+    /* Navbar below banner */
+    #navbar {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display:flex;justify-content:center;
+    }
+    #navbar a {
+      padding:15px 20px;font-weight:600;color:#444;position:relative;
+    }
+    #navbar a.active {color:#0077b5}
+    #navbar a:hover {
+      color: #005f8d;
+    }
+    #navbar a::after {
+      content:"";
+      position:absolute;bottom:5px;left:0;
+      width:0%;height:2px;background:#0077b5;
+      transition:width 0.3s ease;
+    }
+    #navbar a:hover::after {width:100%;}
 
-#navbar a.active {
-  border-bottom: 3px solid red;
-}
+    /* Card - Left Side */
+    .card {
+      background:#fff;
+      border-radius:15px;
+      padding:20px;
+      margin:30px;
+      width:300px;
+      text-align:center;
+      box-shadow:0 6px 16px rgba(0,0,0,0.12);
+      transition:.3s;
+      float:left;
+    }
+    .card:hover {transform:translateY(-4px)}
+    .card img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      outline: 3px solid #0077b5;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      margin-bottom: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+    /* Social Icons in Card */
+    .card .social-links a {
+      display:inline-block;
+      margin:0 6px;
+      color:#666;
+      font-size:1.2rem;
+      padding:6px;
+      border-radius:50%;
+      transition: all 0.3s ease;
+    }
+    .card .social-links a:hover {
+      color:#0077b5;
+      border:2px solid #0077b5;
+      background:#fff;
+      transform:scale(1.1);
+    }
 
-.navbar:hover .navbar-content {
-  display: block;
-}
+    /* Content - Right Side */
+    .content {
+      max-width:900px;
+      margin-left:360px;
+      padding:20px;
+    }
+    .content h2 {
+      font-size:1.9rem;margin:20px 0;
+      position:relative;display:inline-block;
+    }
+    .content h2::after {
+      content:"";position:absolute;left:0;bottom:-6px;
+      width:60%;height:3px;background:#0077b5;border-radius:2px;
+    }
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
+    /* Timeline */
+    .timeline {position:relative;margin:30px 0;padding-left:30px}
+    .timeline::before {
+      content:"";position:absolute;left:12px;top:0;bottom:0;
+      width:2px;background:#0077b5;
+    }
+    .timeline li {
+      position: relative;
+      list-style: none;
+      margin-bottom: 25px;
+      padding-left: 25px;
+    }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border: 3px solid #0077b5;
+      border-radius: 50%;
+    }
 
-#navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: black;
-}
+    /* Footer */
+    footer {
+      clear: both;
+      text-align:center;padding:30px;
+      background:#f9f9f9;margin-top:60px;
+    }
+    footer p {color:#666;font-size:0.9rem}
+    footer .social-links a {
+      margin:0 10px;font-size:1.2rem;color:#666;
+      padding:6px;border-radius:50%;transition:all 0.3s ease;
+    }
+    footer .social-links a:hover {
+      color:#0077b5;
+      border:2px solid #0077b5;
+      background:#fff;
+      transform:scale(1.1);
+    }
 
-.dropdown-content {
-  display: none;
-  position:absolute;
-  background-color: black;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+    /* Back to Top */
+    #back-to-top {
+      position:fixed;bottom:20px;right:20px;
+      background:#0077b5;color:#fff;width:45px;height:45px;
+      border-radius:50%;text-align:center;line-height:45px;
+      font-size:1.2rem;font-weight:bold;
+      text-decoration:none;display:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+      transition:.3s;
+    }
+    #back-to-top:hover {background:#005f8d}
 
-.dropdown-content a {
-  float: none;
-  color: red;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  
-}
-
-.sticky + .content {
-  padding-top: 60px;
-}
-
-</style>
+    @media(max-width:1024px){
+      .card{float:none;margin:auto;width:90%;}
+      .content{margin-left:0;padding:15px;}
+      .cover-banner {height:150px;}
+    }
+  </style>
 </head>
-
 <body>
+  <a id="top"></a>
 
-<div class="header">
-  
-</div>
+  <!-- Cover Banner -->
+  <img src="https://www.uu.se/images/200.136686d1187793d565e21e7a/1682407895338/Masterprogram-i-fysik-teoretisk-fysik-kvantf%C3%A4lt-och-str%C3%A4ngteori.jpg" 
+       alt="String Theory" class="cover-banner">
 
-<div id="navbar">
-  <a href="https://meysam-hassandoust.github.io/">Home</a>
-  <a class="active"href="https://meysam-hassandoust.github.io/cv">CV</a>
-  <a href="https://meysam-hassandoust.github.io/Research">Research</a>
-  <a href="https://meysam-hassandoust.github.io/problems">Problems</a>
-  <a href="https://meysam-hassandoust.github.io/notes">Notes</a>
-  <a href="https://meysam-hassandoust.github.io/Competition">Competitions</a>
-  
-</div>
-<head>
-<style>
-.card {
-  position: left;
-  box-shadow: 0 4px 8px 0 rgba(0, 0.2, 0, 0);
-  max-width: 210px;
-  margin: left;
-  text-align: center;
-  font-family: arial;
-}
+  <!-- Navbar BELOW Banner -->
+  <nav id="navbar">
+     <a href="https://meysam-hassandoust.github.io/">Home</a>
+     <a class="active" href="https://meysam-hassandoust.github.io/cv">CV</a>
+     <a href="https://meysam-hassandoust.github.io/Research">Research</a>
+  </nav>
 
-.title {
-  color: grey;
-  font-size: 18px;
-}
+  <!-- Profile Card -->
+  <section class="card">
+    <img src="https://github.com/meysam-hassandoust/meysam-hassandoust.github.io/blob/main/studentPhoto_LE_upscale_balanced_x4.jpg?raw=true" 
+         alt="Profile Picture" loading="lazy">
+    <h1>Meyssam Hassandoust</h1>
+    <p class="title">Theoretical Physics @ SUT</p>
+    <p>May 05, 2001 — Tehran, Iran</p>
+    <p>Mathematical Physics, String Theory</p>
+    <div class="social-links">
+      <a href="mailto:MeysamHassandoust@gmail.com"><i class="fa fa-envelope"></i></a>
+      <a href="https://meysam-hassandoust.github.io/"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/meyssam-hassandoust-40b422327"><i class="fa fa-linkedin"></i></a>
+    </div>
+  </section>
 
-  .s1 { color: #333; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 20pt; }
- .s2 { color: #999; font-family:Arial, sans-serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
- .s3 { color: black; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 10pt; vertical-align: 1pt; }
- .s5 { color: black; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 16pt; }
- .s6 { color: #333; font-family:"Times New Roman", serif; font-style: normal; font-weight: normal; text-decoration: underline; font-size: 16pt; }
- h2 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
- .s7 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
- .s8 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 9pt; }
-.s80 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 13pt; }
-.s81 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 11pt; }
- .s9 { color: #5D5D5D; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 8pt; }
- .s10 { color: #333; font-family:Calibri, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 9pt; }
-.s82 { color: #1B1212; font-family:Cambria, serif; font-style: italic; font-weight: normal; text-decoration: none; font-size: 10pt; }
- .h3 { color: #414141; font-family:"Trebuchet MS", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
- .s11 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 11pt; }
- .s12 { color: #5D5D5D; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
- li {display: block; }
- #l1 {padding-left: 0pt; }
- #l1> li>*:first-child:before {content: "• "; color: #333; font-family:Tahoma, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-button:hover, a:hover {
-  opacity: 0.8;
-}
-
-</style>
-</head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="card"style="float: left">
-  <img src="https://github.com/MeysamHassandoost/meysamhassandoost.github.io/blob/main/unnamed1.jpg?raw=true"style="left; width:100%">
-  <h1 style="font-size :110%;">Meysam Hassandoust</h1>
-  <p class="title"style="font-size :90%;">>>Theoretical Physics @SBU</p>
-  <p class="title"style="font-size :90%;">>>May 05, 2000, Tehran, Iran</p>  
-  <p class="title"style="font-size :90%;">>>Quantum Optics, Quantum &nbsp;&nbsp;&nbsp;&nbsp;Information ,
-  Mathematical &nbsp;&nbsp;&nbsp;&nbsp;Physics , Classical Mechanics  , Quantum Foundations </p> 
-  
-  <div style="margin: 24px 0;">
-    <a href="mailto:MeysamHassandoust@gmail.com"><i class="fa fa-envelope"></i></a> 
-    <a href="https://meysam-hassandoust.github.io/"><i class="fa fa-github"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>   
-  </div>
-</div>
-
-<body>
-<div class="content">
-
-  <h3 style="font-size:200%;"><a style="font-size:100%; color:#8B0000" 
-href="https://meysam-hassandoust.github.io/files/CV/My CV.pdf" target="_blank">CV</a></h3>
-
-<p class="s5" style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Education
- <span class="s6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
- </p>
- <h2 style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
- <p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">BTech in Physics
- <span class="s9">Sep 2019 ‑ Current</span>
- </p>
- <ul id="l1"><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Courses: <span class="p">Mathematical Physics , Quantum Mechanics , Electromagnetism , Electrodynamics , Analytical Mechanics , Theory of Relativity , Solid State Physics, Foundation of Matrices and Linear Algebra</span></p>
-<h2 style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Atomic Energy High School                                        <span class="s7">Tehran, Iran</span></h2><p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">High School                                                         <span class="s9">Apr 2016 ‑ Apr 2019</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Passed with Distinction</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Specialised in Physics and Maths</p>
- <p style="text-indent: 0pt;text-align: left;"><br/></p>
- <p class="s5" style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Research             Experience   
- <span class="s6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
- </p>
- <h2 style="padding-top: 8pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        
- <span class="s7">Tehran, Iran</span></h2>
-
-
-<p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Cosmology 
-
-
-                                                    
-<span class="s9">Aug 2023 ‑ Present</span></p>
-</li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">WaveFunction of the Universe in Anisotropic Minisuperspace
-Model.
-<a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/Research/WaveFunction_of_the_Universe_in_Anisotropic_Minisuperspace_Model.pdf" target="_blank">here</a>
-
-
-  </li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Analytical solution of the Dirac equation near the event horizon of a charged black hole.
-<a style="font-size:100%; color:#8B0000" href="https://meysam-hassandoust.github.io/files/Research/Analytical_solution_of_the_Dirac_equation_near_the_event_horizon_of_a_charged_black_hole.pdf" target="_blank">here</a>
-
+  <!-- Content -->
+  <section class="content">
     
-</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University       <span class="s7">Tehran, Iran</span></h2>
 
-<p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Mechanics 
-
-
-                                                    
-<span class="s9">Sep 2022 ‑ Present</span></p>
-</li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle.
-
-
-</li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry in Quantum Mechanics for Dirac equation in FRW space time.
-
-</li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Supersymmetry time dependent in Quantum Mehcanics.
-
-    
-</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University       <span class="s7">Tehran, Iran</span></h2>
-
-
- <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Optics
-
-
-<span class="s9">Jun 2022 ‑ Sep 2022</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Rydberg RF Receiver Operation to Track RF Signal Fading and Frequency Drift .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Electromagnetically Induced Transparency (EIT) .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Atom based RF electric field sensing .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Investigating the phenomenon of anti‑resonance and resonance in coupled oscillators and comparing the Fano phenomenon in classical and quantum states .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Analytical solution of N Coupled Oscillators in Classical Mechancis .</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
-
-
-
- <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Mathematical Physics                                                    
-
-
-<span class="s9">Jun 2022 ‑ Apr 2023</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Pseudo‑Supersymmetry time dependent in Quantum Mechanics</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Pseudo‑Hermitian Hamiltonian Representation Of Quantum Mechanics .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Literature Review on Pseudo‑Supersymmetry in Quantum Mechanics .</p><p style="text-indent: 0pt;text-align: left;"><br/></p><h2 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                        <span class="s7">Tehran, Iran</span></h2>
-
-
-
- <p class="s80" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Computational Work                                                     
-
-
-
-
-<span class="s9">Jun 2020 ‑ Jul 2022</span></p></li><li data-list-text="•"><p style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical Approach (Monte Carlo Method) For Feynman Path Integral . (Basic)</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical Approach For Schrödinger Equation .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of Laplace Equation in Electromagnetic .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of Ising Model .</p></li><li data-list-text="•"><p style="padding-left: 14pt;text-indent: -8pt;text-align: left;">Numerical solution of the Three‑Body Problem .</p><p style="text-indent: 0pt;text-align: left;"><br/></p>
- <p class="s5" style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Teaching             Experiences<span class="s6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
-
-
-
-
-
-
-
-
-<li data-list-text="•"><p style="padding-top: 9pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Mathematical Physics I Teacher’s Aide                                   
-<span class="s7">Tehran, Iran</span></p><p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                                 <span class="s9">Sep 2023 ‑ Feb 2024</span></p></li>
-<h2 style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Course Instructor: Prof. Mohammad Aliakbari</h2>
-
-<li data-list-text="•"><p style="padding-top: 9pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Mechanics I Teacher’s Aide                                   
-<span class="s7">Tehran, Iran</span></p><p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                                 <span class="s9">Sep 2023 ‑ Feb 2024</span></p></li>
-<h2 style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Course Instructor: Prof. Ali Sadeghi</h2>
-
-<li data-list-text="•"><p style="padding-top: 9pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Quantum Mechanics I Teacher’s Aide                                   
-<span class="s7">Tehran, Iran</span></p><p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                                 <span class="s9">Sep 2022 ‑ Feb 2023</span></p></li>
-<h2 style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Course Instructor: Prof. Ali Sadeghi</h2>
-
-<li data-list-text="•"><p style="padding-top: 9pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">General Physics I Teacher’s Aide                                   
-<span class="s7">Tehran, Iran</span></p><p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                                 <span class="s9">Sep 2022 ‑ Feb 2023</span></p></li>
-<h2 style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Course Instructor: Prof. Siamak Sadat Gousheh</h2>
-
-
-<li data-list-text="•"><p style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Mathematical Physics II Teacher’s Aide                                  
-<span class="s7">Tehran, Iran</span></p><p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                                 <span class="s9">Mar 2021 ‑ Jun 2022</span></p></li>
-<h2 style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Course Instructor: Prof. Ali Hosseini</h2>
-
-
-<li data-list-text="•"><p style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Analytical Mechanics II Teacher’s Aide                                  
-<span class="s7">Tehran, Iran</span></p><p class="s8" style="padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                                 <span class="s9">Mar 2021 ‑ Jun 2022</span></p></li>
-<h2 style="padding-top: 1pt;padding-left: 14pt;text-indent: -8pt;text-align: left;">Course Instructor: Prof. Mohammad Aliakbari</h2>
-
-
-<li data-list-text="•"><p style="padding-top: 5pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Mathematical Physics I Teacher’s Aide                                  <span class="s7">Tehran, Iran</span></p><p class="s8" style="padding-top: 2pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Shahid Beheshti University                                                 <span class="s9">Sep 2021 ‑ Feb 2022</span></p></li>
-<h2 style="padding-top: 1pt;padding-left: 17pt;text-indent: -8pt;text-align: left;">Course Instructor: Prof. Ali Hosseini</h2>
-
-</li>
-</ul>
-
-
-
-
-
-
-
- <p class="s5" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Skills
-<span class="s6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-</p>
-
-<h2 style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Programming 
-<span class="p" style="padding-top: 5pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Python , C/C++, HTML/CSS , Mathematica , Word , Excel.</span>
-</h2>
-
-<h2 style="padding-top: 1pt;padding-left: 22pt;text-indent: 0pt;text-align: left;">Soft Skills 
-<span class="p" style="padding-top: 5pt;padding-left: 8pt;text-indent: 0pt;text-align: left;">Time Management, Teamwork, Problem‑solving.</span>
-</h2>
-
-
-<p style="text-indent: 0pt;text-align: left;"><br/></p>
-
-
- <p class="s5" style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Achievements 
-
-<span class="s6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
-
-
-
-
-
-
-<p class="s8" style="padding-top: 4pt;padding-left: 18pt;text-indent: 0pt;text-align: left;">2023  <span class="h3">Ranked</span><span class="s11"></span>
-
-
-
-
-<span class="s81">8th in the university students’ national Physics Olympiad </span>
-<span class="s7">Iran</span></p>
-<p class="s8" style="padding-top: 4pt;padding-left: 18pt;text-indent: 0pt;text-align: left;">2023  <span class="h3">Ranked</span><span class="s11">, </span>
-
-
-
-
-<span class="s81">One of the first 15 students in the national master studies entrance exam </span>
-<span class="s7">Iran</span></p>
-<p class="s8" style="padding-left: 18pt;text-indent: 0pt;text-align: left;">2018  <span class="h3">Pass</span><span class="s11">, </span>
-
-
-<span class="s81">Passing the First Stage Of Astronomy Olympiad                                     </span>
-<span class="s7">Iran</span></p>
-<p class="s8" style="padding-left: 18pt;text-indent: 0pt;text-align: left;">2018  <span class="h3">Pass</span><span class="s11">, </span>
-
-
-
-<span class="s81">Passing the First Stage Of Physics Olympiad                                       </span>
-<span class="s7">Iran</span></p>
-<p class="s8" style="padding-left: 18pt;text-indent: 0pt;text-align: left;">2018  <span class="h3">Pass</span><span class="s11">, </span>
-
-
-
-
-<span class="s81">Passing the First Stage Of Mathematics Olympiad                                   </span>
-<span class="s7">Iran</span></p>
-<p class="s8" style="padding-left: 18pt;text-indent: 0pt;text-align: left;">2018  <span class="h3">Level 6</span><span class="s11">, </span>
-
-
-
-<span class="s81">Ranked 6th in the Messie Marathon                                         </span>
-<span class="s7">Iran</span></p>
-<p class="s8" style="padding-left: 18pt;text-indent: 0pt;text-align: left;">2014  <span class="h3">Winner</span><span class="s11">, </span>
-
-
-
-<span class="s81">National Gold Medal WMTC Mathematics Competition                               </span>
-<span class="s7">Iran</span></p>
-<p class="s8" style="padding-left: 18pt;text-indent: 0pt;text-align: left;">2013  <span class="h3">Pass</span><span class="s11">, </span>
-
-
-
-<span class="s81">Passing the second Stage Of IMC Mathematics Competition                              </span>
-<span class="s7">Iran</span></p>
-
-
-
-<p class="s5" style="padding-top: 12pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Interests 
-<span class="s6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-</p>
-
-
-<h2 style="padding-top: 5pt;padding-left: 37pt;text-indent: 0pt;text-align: left;">Sport <span class="s81">I have played in the Mahram team in the youth category and after that I switched to street basketball.</span>
-</h2>
-
-
-<h2 style="padding-top: 1pt;padding-left: 26pt;text-indent: 0pt;text-align: left;">Cooking <span class="s81">I love cooking. I am an expert in most Indian‑style cooking, enjoy baking and making my own pizza.</span>
-</h2>
-
-
-<h2 style="padding-top: 1pt;padding-left: 37pt;text-indent: 0pt;text-align: left;">Music <span class="s81">I am a Setar musician and used to compose music . </span>
-</h2>
-
-
-<h2 style="padding-top: 1pt;padding-left: 48pt;text-indent: 0pt;text-align: left;">Art <span class="s81">I have always enjoyed drawing since I was a child. Recently, I work with graffiti</span>
-</h2>
-
-
-<h2 style="padding-top: 1pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Video Games  <span class="s81">I always had the gaming gene. I mostly play on my PC.</span>
-</h2>
-
-
-<p style="text-indent: 0pt;text-align: left;"><br/></p>
-
-
- <p class="s5" style="padding-left: 5pt;text-indent: 0pt;text-align: left;">Languages 
-<span class="s6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-</p>
-<h2 style="padding-top: 9pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">English  <span class="s81">Upper Intermediate
-</span>
-</h2>
-<h2 style="padding-top: 1pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Persian  <span class="s81">Native proficiency
-</span>
-</h2>
-
-</div>
-</body>
-
-<script>
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
-
+    <!-- CV Section -->
+    <div class="cv-section">
+      <h2>Curriculum Vitae</h2>
+
+      <h3>Education</h3>
+      <ul class="timeline">
+        <li><strong>Sharif University of Technology</strong> – M.Sc in Physics (2024 – Present)</li>
+        <li><strong>Shahid Beheshti University</strong> – B.Sc in Physics (2019 – 2024)</li>
+        <li><strong>Atomic Energy High School</strong> – Diploma (2016 – 2019)</li>
+      </ul>
+
+      <h3>Research Experience</h3>
+      <ul class="timeline">
+        <li><strong>A generalization of the Selberg zeta function for flat space cosmologies</strong> – Supervisor: Prof. Reza Fareghbal</li>
+        <li><strong>Topological aspects of the Berry phase</strong> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+        <li><a href="https://meysam-hassandoust.github.io/files/Research/Group_Theory_and_Irreducible_Representations_of_the_Poincare__Group (1).pdf" target="_blank">Group theory and irreducible representations of the Poincaré group</a> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+        <li><a href="https://meysam-hassandoust.github.io/files/Research/Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle.pdf" target="_blank">Supersymmetry in Quantum Mechanics by Generalized Uncertainty Principle</a> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+        <li><a href="https://meysam-hassandoust.github.io/files/Research/بررسی_ابرتقارن_برای_معادله_ی_دیراک_در_فضا_زمان_FRW (3).pdf" target="_blank">Supersymmetry in Quantum Mechanics for Dirac equation in FRW space-time</a> – Supervisor: Prof. Siamak Sadat Gousheh</li>
+      </ul>
+
+      <h3>Teaching Assistant</h3>
+      <ul class="timeline">
+        <li><strong>Physics Laboratory I</strong> – Sharif University of Technology (Fall 2024)</li>
+        <li><strong>Mathematical Physics I</strong> – Shahid Beheshti University (Fall 2023)</li>
+        <li><strong>Quantum Mechanics I</strong> – Shahid Beheshti University (Fall 2022)</li>
+        <li><strong>General Physics I</strong> – Shahid Beheshti University (Fall 2022)</li>
+        <li><strong>Mathematical Physics II</strong> – Shahid Beheshti University (Spring 2021)</li>
+        <li><strong>Analytical Mechanics II</strong> – Shahid Beheshti University (Spring 2021)</li>
+        <li><strong>Mathematical Physics I</strong> – Shahid Beheshti University (Fall 2020)</li>
+      </ul>
+
+      <h3>Achievements</h3>
+      <ul class="timeline">
+        <li>Ranked 14th – National Physics Olympiad for University Students (2024)</li>
+        <li>Ranked 8th – National Physics Olympiad for University Students (2023)</li>
+        <li>Ranked 18th – National Master Entrance Exam (2024)</li>
+        <li>Ranked 14th – National Master Entrance Exam (2023)</li>
+        <li>Ranked 6th – Messie Marathon (2019)</li>
+        <li>National Gold Medal – WMTC Mathematics Competition (2014)</li>
+      </ul>
+
+      <h3>Languages</h3>
+      <ul class="timeline">
+        <li><strong>English:</strong> Upper Intermediate</li>
+        <li><strong>Persian:</strong> Native</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    window.onscroll = function () {
+      const btn = document.getElementById('back-to-top');
+      if(btn) btn.style.display = window.pageYOffset > 100 ? 'block' : 'none';
+    };
+    const backToTop = document.getElementById('back-to-top');
+    if(backToTop){
+      backToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({top:0,behavior:'smooth'});
+      });
+    }
+  </script>
 </body>
 </html>
