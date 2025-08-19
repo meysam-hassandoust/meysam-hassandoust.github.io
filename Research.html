@@ -15,8 +15,7 @@
     a {color:#0077b5;text-decoration:none;transition:.3s;}
     a:hover {color:#005f8d;}
 
-   /* Cover Banner */
-   
+    /* Cover Banner */
     .cover-banner {
       width: 100%;
       height: 350px;
@@ -24,7 +23,6 @@
       display: block;
       margin-bottom: 0px;
     }
-
 
     /* Navbar */
     #navbar {background: rgba(255,255,255,0.9);backdrop-filter: blur(8px);box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;justify-content:center;}
@@ -45,7 +43,7 @@
     .content h2 {font-size:1.9rem;margin:20px 0;position:relative;display:inline-block;}
     .content h2::after {content:"";position:absolute;left:0;bottom:-6px;width:60%;height:3px;background:#0077b5;border-radius:2px;}
 
-    /* Drive Files Section */
+    /* Folder */
     .folder {cursor:pointer;padding:15px;margin:5px 0;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:all 0.4s ease;}
     .folder:hover {background:#e8f0fe;}
 
@@ -56,13 +54,30 @@
       padding-left: 20px;
     }
     .file-list-container.show {
-      max-height: 400px; /* ارتفاع ثابت برای اسکرول */
-      overflow-y: auto;  /* فعال شدن اسکرول عمودی */
+      max-height: 600px; /* جا برای متن و عکس */
+      overflow-y: auto;
       padding-top: 10px;
       padding-bottom: 10px;
     }
-    .file-list-container ul {margin:0; padding-left: 20px; list-style-type: disc;}
-    .file-list-container li {margin:5px 0;}
+
+    /* محتوا داخل فولدر */
+    .folder-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .folder-content .text {
+      flex: 1 1 55%;
+    }
+    .folder-content .image {
+      flex: 1 1 40%;
+    }
+    .folder-content img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
 
     /* Footer */
     footer {clear: both;text-align:center;padding:30px;background:#f9f9f9;margin-top:60px;}
@@ -93,8 +108,7 @@
   <section class="content">
     <h2>Research</h2>
     <p>
-      Although I am still at the level of a Master's student and not yet in a position to define a formal research focus, I am interested in topics such as the observer in de Sitter space
-      and its influence on the Polchinski's phase, JT gravity, and, to a very limited extent, Topological Field Theory.
+      As a Master’s student, I have developed a strong interest in topics such as the role of the observer in de Sitter space and its influence on Polchinski’s phase, the dynamics of JT gravity, and, to a more limited extent, aspects of Topological Field Theory.
     </p>
     <p>
       Here are some articles I found interesting in these areas. Naturally, I haven’t read all of them, and some may be related to my academic activities.
@@ -103,68 +117,78 @@
       By the way, I took the photo above from <a href="https://www.symmetrymagazine.org/article/taking-a-risk-on-theoretical-physics?language_content_entity=en" target="_blank">SymmetryMagazine</a>, which features an interview with Prof. Maldacena. I found the title of this section particularly interesting.
     </p>
 
-    <!-- Google Drive Files Section -->
     <div class="drive-files">
-      <h3>My Research Folders</h3>
-      <div id="folders"></div>
+      <h3>My Research Interest</h3>
+
+      <!-- JT Gravity -->
+      <div class="folder">JT Gravity
+        <div class="file-list-container">
+          <div class="folder-content">
+            <div class="text">
+              <h4></h4>
+              <p>
+                Jackiw–Teitelboim (JT) Gravity is a simple yet powerful model of two-dimensional quantum gravity. Despite its minimal setup, it captures deep features of black hole physics, spacetime dynamics, and holography. JT gravity has become a central playground for exploring ideas like quantum chaos, information loss, and the AdS/CFT correspondence, offering insights that extend far beyond its deceptively small world.
+              </p>
+            </div>
+            <div class="image">
+              <img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs41114-023-00046-1/MediaObjects/41114_2023_46_Fig1_HTML.png" alt="JT Gravity">
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Observers in Quantum Gravity -->
+      <div class="folder">Observers in Quantum Gravity
+        <div class="file-list-container">
+          <div class="folder-content">
+            <div class="text">
+              <h4></h4>
+              <p>
+                In de Sitter spacetime, the presence of a cosmological horizon means that different observers generally have access to different regions of the universe. This makes “reality” observer-dependent: what one observer can measure or even define as a quantum state may be inaccessible to another. Such observer effects are central to understanding entropy, information, and quantum fields in dS space — and they highlight the deep puzzle of how to formulate a consistent theory of quantum gravity in an expanding universe.
+              </p>
+            </div>
+            <div class="image">
+              <img src="https://www.researchgate.net/publication/383708406/figure/fig1/AS:11431281275642643@1725436946561/Penrose-diagram-of-de-Sitter-spacetime.ppm" alt="Observers in Quantum Gravity">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+      <!-- Topological Field Theory -->
+      <div class="folder">Topological Field Theory
+        <div class="file-list-container">
+          <div class="folder-content">
+            <div class="text">
+              <h4></h4>
+              <p>
+                A Topological Field Theory is a special type of quantum field theory where physical quantities do not depend on distances or shapes, but only on the topology of the space. This means the theory is insensitive to local geometric details and instead captures global, topological features — like how many holes a surface has. TFTs provide a deep link between physics and pure mathematics, with applications ranging from knot invariants to quantum computing and the study of quantum gravity.
+              </p>
+            </div>
+            <div class="image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm-0dB21Iqr2OuQVoJb3l9tbqS8fiy2_qGXg&s" alt="TQFT">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
   </section>
 
   <!-- Back to top -->
   <a href="#top" id="back-to-top">&#8679;</a>
 
-<script>
-const API_KEY = "AIzaSyCOc2rMpewjAqiaw7Py0Mi5U96cPKJMMEU";
+  <script>
+    // toggle open/close
+    document.querySelectorAll(".folder").forEach(folder => {
+      folder.addEventListener("click", () => {
+        const container = folder.querySelector(".file-list-container");
+        container.classList.toggle("show");
+      });
+    });
 
-// آرایه فولدرها
-const FOLDERS = [
-  {name: "JT Gravity", id: "1MDmhBxXyfnFOuSD8KFASKHIm29tmw35d"},
-  {name: "Topological Field Theory", id: "1ZJwbdCxn3LIsl3vyNW3Eue6Cr6farIXG"},
-  {name: "Observers In Quantum Gravity", id: "1HbXyptd3453v-E0-CXsbjBlcZLL9K35P"}
-];
-
-function loadFolders() {
-  const container = document.getElementById("folders");
-  FOLDERS.forEach(folder => {
-    const div = document.createElement("div");
-    div.className = "folder";
-    div.textContent = folder.name;
-
-    const fileContainer = document.createElement("div");
-    fileContainer.className = "file-list-container";
-    div.appendChild(fileContainer);
-
-    div.onclick = async () => {
-      fileContainer.classList.toggle("show");
-      if (fileContainer.classList.contains("show") && fileContainer.innerHTML.trim() === "") {
-        fileContainer.innerHTML = "<ul><li>Loading files...</li></ul>";
-        try {
-          const res = await fetch(`https://www.googleapis.com/drive/v3/files?q='${folder.id}'+in+parents+and+trashed=false&fields=files(id,name,mimeType)&key=${API_KEY}`);
-          const data = await res.json();
-          const ul = document.createElement("ul");
-          if (!data.files || data.files.length === 0) {
-            ul.innerHTML = "<li>No files found or files are not public.</li>";
-          } else {
-            data.files.forEach(file => {
-              const li = document.createElement("li");
-              li.innerHTML = `<a href="https://drive.google.com/file/d/${file.id}/view" target="_blank">${file.name}</a>`;
-              ul.appendChild(li);
-            });
-          }
-          fileContainer.innerHTML = "";
-          fileContainer.appendChild(ul);
-        } catch (err) {
-          console.error("Error fetching files:", err);
-          fileContainer.innerHTML = "<ul><li>Error loading files.</li></ul>";
-        }
-      }
-    };
-
-    container.appendChild(div);
-  });
-}
-
-loadFolders();
-</script>
+   
+  </script>
 </body>
 </html>
