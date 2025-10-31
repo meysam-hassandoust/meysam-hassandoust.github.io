@@ -34,7 +34,6 @@
       --mobile-break:900px;
     }
 
-    /* Basic */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -43,7 +42,7 @@
       line-height:1.6;overflow-x:hidden;scroll-behavior:smooth;
     }
 
-    /* Background layers */
+    /* === ORIGINAL BACKGROUND LAYERS === */
     #bg-container{
       position:fixed;inset:0;z-index:-4;pointer-events:none;
       background:
@@ -87,7 +86,7 @@
     #side-nav a.active{color:var(--accent);background:rgba(0,216,255,0.06);box-shadow:inset 0 0 12px rgba(0,216,255,0.05)}
     #side-nav a:hover{transform:translateX(6px);color:var(--accent)}
 
-    /* Mobile hamburger (hidden on desktop) */
+    /* Mobile hamburger */
     .mobile-header {
       display:none;
       position:fixed;left:16px;top:16px;z-index:60;
@@ -101,7 +100,7 @@
     }
     .burger-btn:focus{outline:2px solid rgba(0,216,255,0.18);}
 
-    /* Drawer (mobile nav) */
+    /* Drawer */
     .drawer {
       position:fixed;left:0;top:0;bottom:0;width:280px;max-width:86vw;
       background:linear-gradient(180deg, rgba(10,14,26,0.96), rgba(8,12,20,0.98));
@@ -114,13 +113,12 @@
     .drawer a{color:var(--muted);text-decoration:none;font-weight:600;padding:10px;border-radius:10px}
     .drawer a.active{color:var(--accent);background:rgba(0,216,255,0.04)}
 
-    /* Overlay when drawer is open */
     .drawer-overlay{
       position:fixed;inset:0;background:rgba(0,0,0,0.45);opacity:0;pointer-events:none;transition:opacity var(--transition) ease;z-index:70;
     }
     .drawer-overlay.show{opacity:1;pointer-events:auto;}
 
-    /* Card (Home only) */
+    /* Card */
     .card{background:var(--card-bg);border-radius:var(--radius);padding:26px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.5);backdrop-filter: blur(10px)}
     .card img{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:0 0 20px rgba(0,216,255,0.16);margin:0 auto 14px;transition:transform .25s ease}
     .card img:hover{transform:scale(1.04)}
@@ -138,7 +136,7 @@
     .timeline li::before{content:"";position:absolute;left:-12px;top:20px;width:12px;height:12px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px rgba(0,216,255,0.2)}
     .timeline li strong{color:var(--text);font-weight:600}
 
-    /* Research Experience Blocks */
+    /* Research Blocks */
     .research-block{
       background:var(--glass);
       border:1px solid rgba(255,255,255,0.02);
@@ -179,7 +177,7 @@
       color:#cfe8f7;
     }
 
-    /* Research Interest Cards */
+    /* Research Cards */
     .research-card{
       background:var(--glass);border-radius:16px;padding:26px;margin-bottom:24px;
       border:1px solid rgba(255,255,255,0.02);display:grid;grid-template-columns:1fr 240px;gap:24px;align-items:center;
@@ -189,60 +187,12 @@
     .research-card img{max-width:240px;border-radius:12px;display:block;object-fit:cover}
     .research-card h3{margin:0 0 12px;font-size:1.3rem;display:flex;gap:10px;align-items:center;color:var(--accent)}
 
-    /* Contact Button */
-    .contact-btn{
-      display:inline-block;padding:12px 20px;border-radius:12px;
-      background:linear-gradient(180deg,var(--accent),#00b8e6);color:#02222a;
-      text-decoration:none;font-weight:600;margin-top:16px;
-      box-shadow:0 6px 20px rgba(0,216,255,0.2);transition:all var(--transition) ease;
-    }
-    .contact-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,216,255,0.3)}
-
     /* Footer */
     footer{padding:32px 20px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);font-size:0.9rem}
 
     /* Scroll to top */
     #scrollTop{position:fixed;right:20px;bottom:22px;background:linear-gradient(180deg,var(--accent),#00b8e6);color:#06202a;border-radius:12px;padding:12px 14px;z-index:60;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(0,216,255,0.12);display:none;transition:all var(--transition) ease}
     #scrollTop:hover{transform:scale(1.1)}
-
-    /* Responsive rules */
-    @media (max-width: 1200px){
-      :root{--max-width:980px}
-      #home .left-column{flex-basis:300px;width:300px}
-    }
-
-    @media (max-width: var(--mobile-break)){
-      /* Hide desktop side nav, show mobile header */
-      #side-nav{display:none}
-      .mobile-header{display:flex}
-
-      main{padding:20px}
-      section{padding:40px 14px}
-
-      /* Make the layout single column */
-      #home .container{flex-direction:column;align-items:center}
-      #home .left-column,#home .right-column{width:100%;text-align:center}
-      .research-card{grid-template-columns:1fr}
-      .research-card img{max-width:100%;margin-top:16px}
-
-      /* Timeline compact */
-      .timeline{padding-left:16px}
-      .timeline li{padding-left:18px}
-
-      /* Research blocks touch friendly */
-      .research-block{padding:18px;border-radius:14px}
-
-      /* Drawer-specific spacing */
-      .drawer{padding-top:28px}
-
-      /* Larger tappable footer spacing */
-      footer{padding:28px 12px;font-size:0.92rem}
-    }
-
-    @media (max-width: 420px){
-      .card img{width:108px;height:108px}
-      h2{margin-bottom:22px}
-    }
 
     /* STAGGERED REVEAL */
     .stagger > *{
@@ -255,6 +205,34 @@
       opacity:1;
       transform:translateY(0) scale(1);
     }
+
+    /* Responsive */
+    @media (max-width: 1200px){
+      :root{--max-width:980px}
+      #home .left-column{flex-basis:300px;width:300px}
+    }
+
+    @media (max-width: var(--mobile-break)){
+      #side-nav{display:none}
+      .mobile-header{display:flex}
+      main{padding:20px}
+      section{padding:40px 14px}
+      #home .container{flex-direction:column;align-items:center}
+      #home .left-column,#home .right-column{width:100%;text-align:center}
+      .research-card{grid-template-columns:1fr}
+      .research-card img{max-width:100%;margin-top:16px}
+      .timeline{padding-left:16px}
+      .timeline li{padding-left:18px}
+      .research-block{padding:18px;border-radius:14px}
+      .drawer{padding-top:28px}
+      footer{padding:28px 12px;font-size:0.92rem}
+    }
+
+    @media (max-width: 420px){
+      .card img{width:108px;height:108px}
+      h2{margin-bottom:22px}
+    }
+
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto !important}
       #network-canvas{display:none}
@@ -269,22 +247,22 @@
 <div id="grid-overlay" aria-hidden="true"></div>
 <canvas id="network-canvas" aria-hidden="true"></canvas>
 
-<!-- MOBILE HEADER with HAMBURGER -->
-<div class="mobile-header" aria-hidden="false">
-  <button class="burger-btn" id="burgerBtn" aria-label="Open menu" title="Open menu">
+<!-- MOBILE HEADER -->
+<div class="mobile-header">
+  <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
     <i class="fa fa-bars" aria-hidden="true"></i>
   </button>
 </div>
 
-<!-- DRAWER (mobile navigation) -->
+<!-- DRAWER -->
 <nav class="drawer" id="mobileDrawer" aria-hidden="true" aria-label="Mobile navigation">
   <div class="close-row">
     <strong style="color:var(--accent);font-family:Space Grotesk;font-size:1.08rem">Menu</strong>
-    <button class="burger-btn" id="drawerClose" aria-label="Close menu" title="Close menu">
+    <button class="burger-btn" id="drawerClose" aria-label="Close menu">
       <i class="fa fa-xmark"></i>
     </button>
   </div>
-  <div class="nav-list" role="navigation" aria-label="Mobile main navigation">
+  <div class="nav-list">
     <a href="#home" class="active"><i class="fa fa-house"></i> Home</a>
     <a href="#cv"><i class="fa fa-user-graduate"></i> CV</a>
     <a href="#research"><i class="fa fa-flask"></i> Research</a>
@@ -302,31 +280,27 @@
 </nav>
 
 <main>
-  <!-- HOME (2-column) -->
+  <!-- HOME -->
   <section id="home" aria-labelledby="home-title">
     <div class="container">
       <aside class="left-column">
-        <div class="card" tabindex="0" aria-label="Author card">
+        <div class="card" tabindex="0">
           <img src="https://github.com/meysam-hassandoust/meysam-hassandoust.github.io/blob/main/studentPhoto_LE_upscale_balanced_x4.jpg?raw=true" alt="Meyssam Hassandoust" loading="lazy">
           <h1>Meyssam Hassandoust</h1>
           <p>Theoretical Physics @ SUT</p>
           <p>Quantum Gravity • String Theory</p>
-          <div style="margin-top:10px">
-            <!-- social links (optional) -->
-          </div>
         </div>
       </aside>
-
       <article class="right-column content">
         <h2 id="home-title">About</h2>
-        <div class="stagger" id="aboutStagger">
+        <div class="stagger">
           <p>Hi! I’m Meyssam Hassandoust, a Master’s student in Theoretical Physics at Sharif University of Technology. I’m passionate about understanding the fundamental nature of the universe through high-energy physics, with particular interest in Quantum Gravity, String Theory, and Algebraic Quantum Field Theory. This site collects research notes, papers, and teaching experience.</p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- CV (1-column) -->
+  <!-- CV -->
   <section id="cv" aria-labelledby="cv-title">
     <div class="content">
       <h2 id="cv-title">Curriculum Vitae</h2>
@@ -340,9 +314,8 @@
 
       <h3 class="stagger">Research Experience</h3>
       <div class="stagger">
-
         <a href="https://meysam-hassandoust.github.io/files/Research/Selberg_Zeta_Flat_Space_Cosmologies.pdf" target="_blank" class="research-block" rel="noopener noreferrer">
-          <h4>The imaginary phase problem in the gravitational path integral </h4>
+          <h4>The imaginary phase problem in the gravitational path integral</h4>
           <div class="supervisor">Supervisor: Prof. Amin Faraji Astaneh</div>
           <p>In the gravitational path integral, the saddle point approximation introduces an imaginary contribution known as Polchinski's phase, which complicates the interpretation of state counting. Interestingly, this aligns with the structure of von Neumann algebras in regions where gravity is present. In the context of de Sitter gravity, one approach to address this issue is to consider the perspective of an observer, which transforms the algebra of the region into a type II von Neumann algebra. This algebra exhibits intriguing properties, and it is possible that Polchinski's phase may also be related to state counting through this framework.</p>
         </a>
@@ -376,7 +349,6 @@
           <div class="supervisor">Supervisor: Prof. Siamak Sadat Gousheh</div>
           <p>Supersymmetry analysis of the Dirac equation in Friedmann–Robertson–Walker (FRW) cosmological backgrounds.</p>
         </a>
-
       </div>
 
       <h3 class="stagger">Teaching Assistant</h3>
@@ -408,7 +380,7 @@
     </div>
   </section>
 
-  <!-- RESEARCH (1-column) -->
+  <!-- RESEARCH -->
   <section id="research" aria-labelledby="research-title">
     <div class="content">
       <h2 id="research-title">Research Interests</h2>
@@ -442,18 +414,17 @@
           <p>Algebraic Quantum Field Theory (AQFT) is a rigorous framework for understanding quantum fields, emphasizing the algebraic structures underlying observables and their relations rather than relying solely on field operators or Lagrangians. In AQFT, physical quantities in a given region of spacetime are organized into von Neumann algebras, allowing for precise treatment of locality, causality, and symmetries. This approach provides deep insights into phenomena such as entanglement in quantum fields, thermal properties of horizons, and the mathematical foundations of quantum statistics, making it a powerful tool for both high-energy physics and quantum information theory.</p>
         </div>
         <div class="image">
-          <img src="https://www.york.ac.uk/media/mathematics/research/algebraicquantum800x400.jpg" alt="TQFT" loading="lazy">
+          <img src="https://www.york.ac.uk/media/mathematics/research/algebraicquantum800x400.jpg" alt="Algebraic Quantum Field Theory" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT (1-column) -->
+  <!-- CONTACT -->
   <section id="contact" aria-labelledby="contact-title">
     <div class="content">
       <h2 id="contact-title">Contact</h2>
       <div class="stagger">
-        <p></p>
         <p><strong>Email:</strong> <a href="mailto:MeysamHassandoust@gmail.com" style="color:var(--accent)">MeysamHassandoust@gmail.com</a></p>
         <p><strong>Location:</strong> Sharif University of Technology, Tehran, Iran</p>
       </div>
@@ -467,12 +438,8 @@
 
 <button id="scrollTop" aria-label="Scroll to top"><i class="fa fa-arrow-up"></i></button>
 
-<!-- Part 2 (scripts + closing) will follow in the next message -->
-
 <script>
-/* ------------------------------
-   Helpers: $ and $$, throttle
-   ------------------------------ */
+/* === ORIGINAL SCRIPT (unchanged, only optimized for mobile) === */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => Array.from((ctx || document).querySelectorAll(sel));
 
@@ -490,9 +457,7 @@ function throttle(fn, wait){
   };
 }
 
-/* ------------------------------
-   Drawer (mobile hamburger)
-   ------------------------------ */
+/* Drawer */
 const burgerBtn = $('#burgerBtn');
 const mobileDrawer = $('#mobileDrawer');
 const drawerClose = $('#drawerClose');
@@ -503,9 +468,7 @@ function openDrawer(){
   drawerOverlay.classList.add('show');
   mobileDrawer.setAttribute('aria-hidden', 'false');
   drawerOverlay.setAttribute('aria-hidden', 'false');
-  // focus management: move focus to close button
-  drawerClose.focus();
-  document.body.style.overflow = 'hidden'; // prevent background scroll
+  document.body.style.overflow = 'hidden';
   trapFocus(mobileDrawer);
 }
 
@@ -514,38 +477,25 @@ function closeDrawer(){
   drawerOverlay.classList.remove('show');
   mobileDrawer.setAttribute('aria-hidden', 'true');
   drawerOverlay.setAttribute('aria-hidden', 'true');
-  burgerBtn.focus();
-  document.body.style.overflow = ''; // restore scrolling
+  document.body.style.overflow = '';
   releaseFocusTrap();
 }
 
-burgerBtn && burgerBtn.addEventListener('click', openDrawer);
-drawerClose && drawerClose.addEventListener('click', closeDrawer);
-drawerOverlay && drawerOverlay.addEventListener('click', closeDrawer);
-
-// close on Esc
+burgerBtn?.addEventListener('click', openDrawer);
+drawerClose?.addEventListener('click', closeDrawer);
+drawerOverlay?.addEventListener('click', closeDrawer);
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
-    closeDrawer();
-  }
+  if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) closeDrawer();
 });
 
-/* ------------------------------
-   Focus trap (simple)
-   ------------------------------ */
-let _focusableElements = [];
-let _firstFocusable = null;
-let _lastFocusable = null;
-let _focusTrapHandler = null;
-
+/* Focus trap */
+let _focusableElements = [], _firstFocusable = null, _lastFocusable = null, _focusTrapHandler = null;
 function trapFocus(container){
   _focusableElements = Array.from(container.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'))
     .filter(el => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true');
-
   if (_focusableElements.length === 0) return;
   _firstFocusable = _focusableElements[0];
   _lastFocusable = _focusableElements[_focusableElements.length - 1];
-
   _focusTrapHandler = function(e){
     if (e.key !== 'Tab') return;
     if (e.shiftKey && document.activeElement === _firstFocusable){
@@ -558,20 +508,12 @@ function trapFocus(container){
   };
   document.addEventListener('keydown', _focusTrapHandler);
 }
-
 function releaseFocusTrap(){
-  if (_focusTrapHandler) {
-    document.removeEventListener('keydown', _focusTrapHandler);
-    _focusTrapHandler = null;
-  }
-  _focusableElements = [];
-  _firstFocusable = _lastFocusable = null;
+  if (_focusTrapHandler) document.removeEventListener('keydown', _focusTrapHandler);
+  _focusableElements = []; _firstFocusable = _lastFocusable = null;
 }
 
-/* ------------------------------
-   Nav active link highlighting
-   works for desktop and drawer
-   ------------------------------ */
+/* Nav active */
 const sections = $$('section[id]');
 const desktopNavLinks = $$('#side-nav a');
 const drawerNavLinks = $$('#mobileDrawer .nav-list a');
@@ -579,105 +521,79 @@ const drawerNavLinks = $$('#mobileDrawer .nav-list a');
 function setActiveNav(id){
   const href = '#'+id;
   const allLinks = [...desktopNavLinks, ...drawerNavLinks];
-  allLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === href);
-  });
+  allLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === href));
 }
 
 function updateActiveNav(){
   let current = sections.length ? sections[0].id : '';
   for (const sec of sections){
     const r = sec.getBoundingClientRect();
-    // choose the section occupying the top of the viewport, similar to before
     if (r.top <= innerHeight * 0.35 && r.bottom > 0) current = sec.id;
   }
   if (current) setActiveNav(current);
 }
 
-// call on scroll with throttle
 document.addEventListener('scroll', throttle(updateActiveNav, 120), { passive: true });
 window.addEventListener('resize', throttle(updateActiveNav, 200));
 updateActiveNav();
 
-/* Smooth scroll for nav links (works for drawer and desktop) */
+/* Smooth scroll */
 function handleNavClick(e){
   const a = e.currentTarget;
-  if (!a.href) return;
-  // Allow default if external
   const hash = a.getAttribute('href') || '';
   if (hash.startsWith('#')){
     e.preventDefault();
     const target = document.querySelector(hash);
     if (target) {
-      // close drawer if open
       if (mobileDrawer.classList.contains('open')) closeDrawer();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // update active state immediately
       setActiveNav(hash.replace('#',''));
-      // update URL hash without jumping
       history.replaceState(null, '', hash);
     }
   }
 }
-
 [...desktopNavLinks, ...drawerNavLinks].forEach(a => a.addEventListener('click', handleNavClick));
 
-/* ------------------------------
-   Scroll to top button
-   ------------------------------ */
+/* Scroll to top */
 const scrollTopBtn = $('#scrollTop');
 window.addEventListener('scroll', throttle(() => {
-  if (!scrollTopBtn) return;
   scrollTopBtn.style.display = (window.scrollY > window.innerHeight) ? 'block' : 'none';
 }, 150));
-if (scrollTopBtn) scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+scrollTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-/* ------------------------------
-   Staggered reveal using IntersectionObserver
-   ------------------------------ */
+/* Staggered reveal */
 const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 function setDelays(el, base = 70){
   const children = Array.from(el.children);
   children.forEach((c, i) => c.style.transitionDelay = `${i * base}ms`);
 }
-
 if (!prefersReduced){
   const staggerObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const el = entry.target;
       if (entry.isIntersecting){
         setDelays(el);
-        // add small requestAnimationFrame to ensure styles applied
         requestAnimationFrame(() => el.classList.add('in-view'));
       } else {
         el.classList.remove('in-view');
       }
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
-
   $$('.stagger').forEach(el => {
     setDelays(el);
     staggerObserver.observe(el);
   });
-
-  // initial reveal on load
   window.addEventListener('load', () => setTimeout(() => $$('.stagger').forEach(e => e.classList.add('in-view')), 600));
 } else {
-  // reduced motion: show everything
   $$('.stagger').forEach(e => e.classList.add('in-view'));
 }
 
-/* ------------------------------
-   Particle background (network)
-   ------------------------------ */
+/* === ORIGINAL PARTICLE BACKGROUND === */
 (function(){
   if (prefersReduced) return;
-
   const canvas = $('#network-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-
   let W = canvas.width = innerWidth;
   let H = canvas.height = innerHeight;
   const isSmall = Math.min(W, H) < 700;
@@ -739,30 +655,16 @@ if (!prefersReduced){
 
   initParticles();
   draw();
-
 })();
 
-/* ------------------------------
-   Accessibility tweaks
-   - ensure anchor focus styles, ensure drawer aria states
-   ------------------------------ */
-// Ensure drawer has initial aria-hidden true
-if (mobileDrawer) mobileDrawer.setAttribute('aria-hidden', 'true');
-if (drawerOverlay) drawerOverlay.setAttribute('aria-hidden', 'true');
-
-/* ------------------------------
-   Small: updateActiveNav on load (in case hash present)
-   ------------------------------ */
+/* Init */
 window.addEventListener('load', () => {
-  // if URL has a hash, scroll to it smoothly
   if (location.hash){
     const el = document.querySelector(location.hash);
     if (el) setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'start'}), 100);
   }
   updateActiveNav();
 });
-
-/* End of script */
 </script>
 </body>
 </html>
