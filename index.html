@@ -34,15 +34,15 @@
       --mobile-break:900px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%;margin:0}
     body{
-      margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
       color:var(--text);background:var(--bg-1);-webkit-font-smoothing:antialiased;
       line-height:1.6;overflow-x:hidden;scroll-behavior:smooth;
     }
 
-    /* === ORIGINAL BACKGROUND LAYERS === */
+    /* ==== BACKGROUND LAYERS ==== */
     #bg-container{
       position:fixed;inset:0;z-index:-4;pointer-events:none;
       background:
@@ -55,18 +55,16 @@
       opacity:0.06;background-image:
         linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
         linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 140px 140px;transform:translateZ(0);
+      background-size:140px 140px;transform:translateZ(0);
     }
-
-    /* Particle canvas */
     #network-canvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-2;display:block}
 
-    /* Layout */
+    /* ==== LAYOUT ==== */
     main{max-width:var(--max-width);margin:0 auto;padding:32px;position:relative;z-index:2}
     section{padding:80px 20px;display:flex;justify-content:center}
     section .content{max-width:var(--content-max);width:100%}
 
-    /* Home: 2-column */
+    /* ==== HOME ==== */
     #home .container{
       display:flex;gap:40px;align-items:flex-start;justify-content:center;
       max-width:var(--max-width);width:100%;
@@ -74,38 +72,40 @@
     #home .left-column{width:340px;flex:0 0 340px}
     #home .right-column{flex:1;min-width:280px}
 
-    /* Desktop side nav */
+    /* ==== DESKTOP SIDE NAV ==== */
     #side-nav{
       position:fixed;left:18px;top:50%;transform:translateY(-50%);
       display:flex;flex-direction:column;gap:14px;padding:10px;border-radius:14px;
       background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      backdrop-filter: blur(8px);box-shadow:0 8px 30px rgba(0,0,0,0.5);z-index:40;
+      backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(0,0,0,0.5);z-index:40;
     }
-    #side-nav a{display:flex;align-items:center;gap:10px;padding:10px 14px;color:var(--muted);text-decoration:none;font-weight:600;border-radius:10px;transition: all var(--transition) ease;font-size:0.95rem}
-    #side-nav a:focus{outline:2px solid rgba(0,216,255,0.18)}
+    #side-nav a{
+      display:flex;align-items:center;gap:10px;padding:10px 14px;color:var(--muted);
+      text-decoration:none;font-weight:600;border-radius:10px;transition:all var(--transition) ease;
+      font-size:0.95rem;
+    }
     #side-nav a.active{color:var(--accent);background:rgba(0,216,255,0.06);box-shadow:inset 0 0 12px rgba(0,216,255,0.05)}
     #side-nav a:hover{transform:translateX(6px);color:var(--accent)}
 
-    /* Mobile hamburger */
-    .mobile-header {
-      display:none;
-      position:fixed;left:16px;top:16px;z-index:60;
+    /* ==== MOBILE HEADER ==== */
+    .mobile-header{
+      display:none;position:fixed;left:16px;top:16px;z-index:60;
       align-items:center;gap:8px;
     }
     .burger-btn{
       display:inline-flex;align-items:center;justify-content:center;
       width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.03);
       border:1px solid rgba(255,255,255,0.03);cursor:pointer;
-      box-shadow:0 6px 18px rgba(0,0,0,0.4);backdrop-filter: blur(6px);
+      box-shadow:0 6px 18px rgba(0,0,0,0.4);backdrop-filter:blur(6px);
     }
-    .burger-btn:focus{outline:2px solid rgba(0,216,255,0.18);}
 
-    /* Drawer */
-    .drawer {
+    /* ==== DRAWER ==== */
+    .drawer{
       position:fixed;left:0;top:0;bottom:0;width:280px;max-width:86vw;
-      background:linear-gradient(180deg, rgba(10,14,26,0.96), rgba(8,12,20,0.98));
-      box-shadow: 8px 0 40px rgba(2,8,20,0.6);transform:translateX(-112%);transition:transform var(--transition) ease;
-      z-index:80;padding:22px 18px;border-radius:0 14px 14px 0;overflow:auto;
+      background:linear-gradient(180deg,rgba(10,14,26,0.96),rgba(8,12,20,0.98));
+      box-shadow:8px 0 40px rgba(2,8,20,0.6);transform:translateX(-112%);
+      transition:transform var(--transition) ease;z-index:80;padding:22px 18px;
+      border-radius:0 14px 14px 0;overflow:auto;
     }
     .drawer.open{transform:translateX(0);}
     .drawer .close-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
@@ -114,116 +114,113 @@
     .drawer a.active{color:var(--accent);background:rgba(0,216,255,0.04)}
 
     .drawer-overlay{
-      position:fixed;inset:0;background:rgba(0,0,0,0.45);opacity:0;pointer-events:none;transition:opacity var(--transition) ease;z-index:70;
+      position:fixed;inset:0;background:rgba(0,0,0,0.45);opacity:0;pointer-events:none;
+      transition:opacity var(--transition) ease;z-index:70;
     }
     .drawer-overlay.show{opacity:1;pointer-events:auto;}
 
-    /* Card */
-    .card{background:var(--card-bg);border-radius:var(--radius);padding:26px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.5);backdrop-filter: blur(10px)}
-    .card img{width:132px;height:132px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);box-shadow:0 0 20px rgba(0,216,255,0.16);margin:0 auto 14px;transition:transform .25s ease}
+    /* ==== CARD ==== */
+    .card{
+      background:var(--card-bg);border-radius:var(--radius);padding:26px;text-align:center;
+      box-shadow:0 8px 30px rgba(0,0,0,0.5);backdrop-filter:blur(10px);
+    }
+    .card img{
+      width:132px;height:132px;border-radius:50%;object-fit:cover;
+      border:3px solid var(--accent);box-shadow:0 0 20px rgba(0,216,255,0.16);
+      margin:0 auto 14px;transition:transform .25s ease;
+    }
     .card img:hover{transform:scale(1.04)}
     .card h1{font-family:'Space Grotesk',sans-serif;font-size:1.75rem;margin:0 0 6px}
     .card p{color:#d7e6ef;margin:6px 0;font-size:0.95rem}
 
-    /* Headings */
-    h2{font-family:'Space Grotesk';color:var(--accent);font-size:clamp(1.6rem, 2.1vw, 2.1rem);margin:0 0 32px;text-align:center}
-    h3{font-family:'Space Grotesk';color:var(--accent);font-size:clamp(1.1rem, 1.8vw, 1.4rem);margin:32px 0 16px}
-    p{color:#dbe6f2;font-size:clamp(0.95rem, 1.2vw, 1.02rem);line-height:1.6}
+    /* ==== TYPOGRAPHY ==== */
+    h2{font-family:'Space Grotesk';color:var(--accent);font-size:clamp(1.6rem,2.1vw,2.1rem);margin:0 0 32px;text-align:center}
+    h3{font-family:'Space Grotesk';color:var(--accent);font-size:clamp(1.1rem,1.8vw,1.4rem);margin:32px 0 16px}
+    p{color:#dbe6f2;font-size:clamp(0.95rem,1.2vw,1.02rem);line-height:1.6}
 
-    /* Timeline */
+    /* ==== TIMELINE ==== */
     .timeline{list-style:none;padding-left:24px;margin:20px 0;border-left:2px solid rgba(0,216,255,0.1);position:relative}
     .timeline li{position:relative;padding:12px 0 16px 28px;margin:0}
     .timeline li::before{content:"";position:absolute;left:-12px;top:20px;width:12px;height:12px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px rgba(0,216,255,0.2)}
     .timeline li strong{color:var(--text);font-weight:600}
 
-    /* Research Blocks */
+    /* ==== RESEARCH BLOCKS ==== */
     .research-block{
-      background:var(--glass);
-      border:1px solid rgba(255,255,255,0.02);
-      border-radius:16px;
-      padding:24px;
-      margin-bottom:20px;
-      cursor:pointer;
-      transition:all var(--transition) ease;
-      text-decoration:none;
-      color:inherit;
-      display:block;
+      background:var(--glass);border:1px solid rgba(255,255,255,0.02);border-radius:16px;
+      padding:24px;margin-bottom:20px;cursor:pointer;transition:all var(--transition) ease;
+      text-decoration:none;color:inherit;display:block;
     }
     .research-block:hover{
-      transform:translateY(-6px);
-      background:rgba(255,255,255,0.07);
-      box-shadow:0 14px 36px rgba(0,216,255,0.14);
-      border-color:rgba(0,216,255,0.15);
+      transform:translateY(-6px);background:rgba(255,255,255,0.07);
+      box-shadow:0 14px 36px rgba(0,216,255,0.14);border-color:rgba(0,216,255,0.15);
     }
     .research-block h4{
-      margin:0 0 10px;
-      font-family:'Space Grotesk';
-      font-size:1.32rem;
-      color:var(--accent);
-      display:flex;
-      align-items:center;
-      gap:12px;
+      margin:0 0 10px;font-family:'Space Grotesk';font-size:1.32rem;color:var(--accent);
+      display:flex;align-items:center;gap:12px;
     }
-    .research-block .supervisor{
-      font-size:0.92rem;
-      color:var(--muted);
-      margin-bottom:8px;
-      display:block;
-    }
-    .research-block p{
-      margin:0;
-      font-size:0.98rem;
-      line-height:1.6;
-      color:#cfe8f7;
-    }
+    .research-block .supervisor{font-size:0.92rem;color:var(--muted);margin-bottom:8px;display:block}
+    .research-block p{margin:0;font-size:0.98rem;line-height:1.6;color:#cfe8f7}
 
-    /* Research Cards */
+    /* ==== RESEARCH CARDS ==== */
     .research-card{
       background:var(--glass);border-radius:16px;padding:26px;margin-bottom:24px;
-      border:1px solid rgba(255,255,255,0.02);display:grid;grid-template-columns:1fr 240px;gap:24px;align-items:center;
-      transition:all var(--transition) ease;
+      border:1px solid rgba(255,255,255,0.02);display:grid;grid-template-columns:1fr 240px;
+      gap:24px;align-items:center;transition:all var(--transition) ease;
     }
     .research-card:hover{transform:translateY(-4px);background:rgba(255,255,255,0.07);box-shadow:0 12px 32px rgba(0,216,255,0.1)}
     .research-card img{max-width:240px;border-radius:12px;display:block;object-fit:cover}
     .research-card h3{margin:0 0 12px;font-size:1.3rem;display:flex;gap:10px;align-items:center;color:var(--accent)}
 
-    /* Footer */
+    /* ==== FOOTER ==== */
     footer{padding:32px 20px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);font-size:0.9rem}
 
-    /* Scroll to top */
-    #scrollTop{position:fixed;right:20px;bottom:22px;background:linear-gradient(180deg,var(--accent),#00b8e6);color:#06202a;border-radius:12px;padding:12px 14px;z-index:60;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(0,216,255,0.12);display:none;transition:all var(--transition) ease}
+    /* ==== SCROLL TO TOP ==== */
+    #scrollTop{
+      position:fixed;right:20px;bottom:22px;background:linear-gradient(180deg,var(--accent),#00b8e6);
+      color:#06202a;border-radius:12px;padding:12px 14px;z-index:60;border:none;cursor:pointer;
+      box-shadow:0 8px 30px rgba(0,216,255,0.12);display:none;transition:all var(--transition) ease;
+    }
     #scrollTop:hover{transform:scale(1.1)}
 
-    /* STAGGERED REVEAL */
+    /* ==== STAGGERED REVEAL ==== */
     .stagger > *{
-      opacity:0;
-      transform:translateY(20px) scale(0.995);
+      opacity:0;transform:translateY(20px) scale(0.995);
       transition:transform 420ms cubic-bezier(.2,.9,.25,1), opacity 380ms ease;
       will-change:transform,opacity;
     }
-    .stagger.in-view > *{
-      opacity:1;
-      transform:translateY(0) scale(1);
-    }
+    .stagger.in-view > *{opacity:1;transform:translateY(0) scale(1);}
 
-    /* Responsive */
+    /* ============================================================= */
+    /* ====================== RESPONSIVE =========================== */
+    /* ============================================================= */
+
     @media (max-width: 1200px){
       :root{--max-width:980px}
       #home .left-column{flex-basis:300px;width:300px}
     }
 
-    @media (max-width: var(--mobile-break)){
-      #side-nav{display:none}
+    @media (max-width: 900px){
+      /* Show mobile header & hide side nav */
       .mobile-header{display:flex}
+      #side-nav{display:none}
+
       main{padding:20px}
       section{padding:40px 14px}
+
+      /* Home: stack columns */
       #home .container{flex-direction:column;align-items:center}
       #home .left-column,#home .right-column{width:100%;text-align:center}
+      #home .left-column{margin-bottom:32px}
+
+      /* Research cards become vertical */
       .research-card{grid-template-columns:1fr}
       .research-card img{max-width:100%;margin-top:16px}
+
       .timeline{padding-left:16px}
       .timeline li{padding-left:18px}
+
       .research-block{padding:18px;border-radius:14px}
+
       .drawer{padding-top:28px}
       footer{padding:28px 12px;font-size:0.92rem}
     }
@@ -231,6 +228,7 @@
     @media (max-width: 420px){
       .card img{width:108px;height:108px}
       h2{margin-bottom:22px}
+      .burger-btn{width:40px;height:40px}
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -439,25 +437,24 @@
 <button id="scrollTop" aria-label="Scroll to top"><i class="fa fa-arrow-up"></i></button>
 
 <script>
-/* === ORIGINAL SCRIPT (unchanged, only optimized for mobile) === */
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => Array.from((ctx || document).querySelectorAll(sel));
+/* ==== UTILITIES ==== */
+const $ = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => Array.from((c || document).querySelectorAll(s));
 
 function throttle(fn, wait){
   let last = 0, t;
-  return function(...args){
+  return function(...a){
     const now = Date.now();
     if (now - last >= wait){
-      last = now;
-      fn.apply(this, args);
+      last = now; fn.apply(this, a);
     } else {
       clearTimeout(t);
-      t = setTimeout(() => { last = Date.now(); fn.apply(this, args); }, wait - (now - last));
+      t = setTimeout(() => { last = Date.now(); fn.apply(this, a); }, wait - (now - last));
     }
   };
 }
 
-/* Drawer */
+/* ==== DRAWER ==== */
 const burgerBtn = $('#burgerBtn');
 const mobileDrawer = $('#mobileDrawer');
 const drawerClose = $('#drawerClose');
@@ -466,204 +463,174 @@ const drawerOverlay = $('#drawerOverlay');
 function openDrawer(){
   mobileDrawer.classList.add('open');
   drawerOverlay.classList.add('show');
-  mobileDrawer.setAttribute('aria-hidden', 'false');
-  drawerOverlay.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
+  mobileDrawer.setAttribute('aria-hidden','false');
+  drawerOverlay.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
   trapFocus(mobileDrawer);
 }
-
 function closeDrawer(){
   mobileDrawer.classList.remove('open');
   drawerOverlay.classList.remove('show');
-  mobileDrawer.setAttribute('aria-hidden', 'true');
-  drawerOverlay.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
+  mobileDrawer.setAttribute('aria-hidden','true');
+  drawerOverlay.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
   releaseFocusTrap();
 }
-
 burgerBtn?.addEventListener('click', openDrawer);
 drawerClose?.addEventListener('click', closeDrawer);
 drawerOverlay?.addEventListener('click', closeDrawer);
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) closeDrawer();
 });
 
-/* Focus trap */
-let _focusableElements = [], _firstFocusable = null, _lastFocusable = null, _focusTrapHandler = null;
-function trapFocus(container){
-  _focusableElements = Array.from(container.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'))
-    .filter(el => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true');
-  if (_focusableElements.length === 0) return;
-  _firstFocusable = _focusableElements[0];
-  _lastFocusable = _focusableElements[_focusableElements.length - 1];
-  _focusTrapHandler = function(e){
-    if (e.key !== 'Tab') return;
-    if (e.shiftKey && document.activeElement === _firstFocusable){
-      e.preventDefault();
-      _lastFocusable.focus();
-    } else if (!e.shiftKey && document.activeElement === _lastFocusable){
-      e.preventDefault();
-      _firstFocusable.focus();
-    }
+/* ==== FOCUS TRAP ==== */
+let _focusable = [], _first = null, _last = null, _handler = null;
+function trapFocus(cont){
+  _focusable = Array.from(cont.querySelectorAll('a,button,input,textarea,select,[tabindex]:not([tabindex="-1"])'))
+    .filter(el => !el.disabled && el.getAttribute('aria-hidden')!=='true');
+  if (!_focusable.length) return;
+  _first = _focusable[0]; _last = _focusable[_focusable.length-1];
+  _handler = e => {
+    if (e.key!=='Tab') return;
+    if (e.shiftKey && document.activeElement===_first){ e.preventDefault(); _last.focus(); }
+    else if (!e.shiftKey && document.activeElement===_last){ e.preventDefault(); _first.focus(); }
   };
-  document.addEventListener('keydown', _focusTrapHandler);
+  document.addEventListener('keydown', _handler);
 }
 function releaseFocusTrap(){
-  if (_focusTrapHandler) document.removeEventListener('keydown', _focusTrapHandler);
-  _focusableElements = []; _firstFocusable = _lastFocusable = null;
+  if (_handler) document.removeEventListener('keydown', _handler);
+  _focusable = []; _first = _last = null;
 }
 
-/* Nav active */
+/* ==== NAV ACTIVE ==== */
 const sections = $$('section[id]');
-const desktopNavLinks = $$('#side-nav a');
-const drawerNavLinks = $$('#mobileDrawer .nav-list a');
+const desktopLinks = $$('#side-nav a');
+const drawerLinks = $$('#mobileDrawer .nav-list a');
 
-function setActiveNav(id){
+function setActive(id){
   const href = '#'+id;
-  const allLinks = [...desktopNavLinks, ...drawerNavLinks];
-  allLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === href));
+  [...desktopLinks, ...drawerLinks].forEach(a => a.classList.toggle('active', a.getAttribute('href')===href));
 }
-
-function updateActiveNav(){
-  let current = sections.length ? sections[0].id : '';
-  for (const sec of sections){
-    const r = sec.getBoundingClientRect();
-    if (r.top <= innerHeight * 0.35 && r.bottom > 0) current = sec.id;
+function updateNav(){
+  let cur = sections[0]?.id ?? '';
+  for (const s of sections){
+    const r = s.getBoundingClientRect();
+    if (r.top <= innerHeight*0.35 && r.bottom>0) cur = s.id;
   }
-  if (current) setActiveNav(current);
+  if (cur) setActive(cur);
 }
+document.addEventListener('scroll', throttle(updateNav,120),{passive:true});
+window.addEventListener('resize', throttle(updateNav,200));
+updateNav();
 
-document.addEventListener('scroll', throttle(updateActiveNav, 120), { passive: true });
-window.addEventListener('resize', throttle(updateActiveNav, 200));
-updateActiveNav();
-
-/* Smooth scroll */
-function handleNavClick(e){
+/* ==== SMOOTH SCROLL ==== */
+function navClick(e){
   const a = e.currentTarget;
-  const hash = a.getAttribute('href') || '';
-  if (hash.startsWith('#')){
-    e.preventDefault();
-    const target = document.querySelector(hash);
-    if (target) {
-      if (mobileDrawer.classList.contains('open')) closeDrawer();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setActiveNav(hash.replace('#',''));
-      history.replaceState(null, '', hash);
-    }
+  const h = a.getAttribute('href');
+  if (!h?.startsWith('#')) return;
+  e.preventDefault();
+  const t = document.querySelector(h);
+  if (t){
+    if (mobileDrawer.classList.contains('open')) closeDrawer();
+    t.scrollIntoView({behavior:'smooth',block:'start'});
+    setActive(h.slice(1));
+    history.replaceState(null,'',h);
   }
 }
-[...desktopNavLinks, ...drawerNavLinks].forEach(a => a.addEventListener('click', handleNavClick));
+[...desktopLinks, ...drawerLinks].forEach(a => a.addEventListener('click', navClick));
 
-/* Scroll to top */
-const scrollTopBtn = $('#scrollTop');
+/* ==== SCROLL TO TOP ==== */
+const scrollBtn = $('#scrollTop');
 window.addEventListener('scroll', throttle(() => {
-  scrollTopBtn.style.display = (window.scrollY > window.innerHeight) ? 'block' : 'none';
-}, 150));
-scrollTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  scrollBtn.style.display = (scrollY > innerHeight) ? 'block' : 'none';
+},150));
+scrollBtn?.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
-/* Staggered reveal */
-const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-function setDelays(el, base = 70){
-  const children = Array.from(el.children);
-  children.forEach((c, i) => c.style.transitionDelay = `${i * base}ms`);
+/* ==== STAGGER REVEAL ==== */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function setDelays(el, base=70){
+  Array.from(el.children).forEach((c,i)=>c.style.transitionDelay=`${i*base}ms`);
 }
-if (!prefersReduced){
-  const staggerObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting){
+if (!reduced){
+  const obs = new IntersectionObserver(es => {
+    es.forEach(e => {
+      const el = e.target;
+      if (e.isIntersecting){
         setDelays(el);
-        requestAnimationFrame(() => el.classList.add('in-view'));
-      } else {
-        el.classList.remove('in-view');
-      }
+        requestAnimationFrame(()=>el.classList.add('in-view'));
+      } else el.classList.remove('in-view');
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
-  $$('.stagger').forEach(el => {
-    setDelays(el);
-    staggerObserver.observe(el);
-  });
-  window.addEventListener('load', () => setTimeout(() => $$('.stagger').forEach(e => e.classList.add('in-view')), 600));
-} else {
-  $$('.stagger').forEach(e => e.classList.add('in-view'));
-}
+  },{threshold:0.15, rootMargin:'0px 0px -10% 0px'});
+  $$('.stagger').forEach(el=>{ setDelays(el); obs.observe(el); });
+  window.addEventListener('load',()=>setTimeout(()=>$$('.stagger').forEach(e=>e.classList.add('in-view')),600));
+} else $$('.stagger').forEach(e=>e.classList.add('in-view'));
 
-/* === ORIGINAL PARTICLE BACKGROUND === */
+/* ==== PARTICLE BACKGROUND ==== */
 (function(){
-  if (prefersReduced) return;
+  if (reduced) return;
   const canvas = $('#network-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let W = canvas.width = innerWidth;
   let H = canvas.height = innerHeight;
-  const isSmall = Math.min(W, H) < 700;
-  let count = isSmall ? 30 : 70;
-  let maxDist = isSmall ? 90 : 150;
+  const small = Math.min(W,H)<700;
+  let count = small?30:70;
+  let maxDist = small?90:150;
   let particles = [];
 
-  function initParticles(){
-    particles = [];
-    for (let i = 0; i < count; i++){
+  function init(){
+    particles=[];
+    for(let i=0;i<count;i++){
       particles.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        r: Math.random() * 1.6 + 0.6
+        x:Math.random()*W, y:Math.random()*H,
+        vx:(Math.random()-0.5)*0.6, vy:(Math.random()-0.5)*0.6,
+        r:Math.random()*1.6+0.6
       });
     }
   }
 
   function resize(){
-    W = canvas.width = innerWidth;
-    H = canvas.height = innerHeight;
-    const small = Math.min(W, H) < 700;
-    count = small ? 30 : 70;
-    maxDist = small ? 90 : 150;
-    initParticles();
+    W=canvas.width=innerWidth; H=canvas.height=innerHeight;
+    const s = Math.min(W,H)<700;
+    count=s?30:70; maxDist=s?90:150;
+    init();
   }
-  window.addEventListener('resize', throttle(resize, 200));
+  window.addEventListener('resize',throttle(resize,200));
 
   function draw(){
-    ctx.clearRect(0, 0, W, H);
-    for (let i = 0; i < particles.length; i++){
-      const p = particles[i];
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0 || p.x > W) p.vx *= -1;
-      if (p.y < 0 || p.y > H) p.vy *= -1;
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<particles.length;i++){
+      const p=particles[i];
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>W) p.vx*=-1;
+      if(p.y<0||p.y>H) p.vy*=-1;
 
-      ctx.beginPath();
-      ctx.fillStyle = 'rgba(0,216,255,0.9)';
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.beginPath(); ctx.fillStyle='rgba(0,216,255,0.9)';
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
 
-      for (let j = i + 1; j < particles.length; j++){
-        const p2 = particles[j];
-        const d = Math.hypot(p.x - p2.x, p.y - p2.y);
-        if (d < maxDist){
-          const a = 1 - d / maxDist;
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(0,216,255,${a * 0.12})`;
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
+      for(let j=i+1;j<particles.length;j++){
+        const p2=particles[j];
+        const d=Math.hypot(p.x-p2.x,p.y-p2.y);
+        if(d<maxDist){
+          const a=1-d/maxDist;
+          ctx.beginPath(); ctx.strokeStyle=`rgba(0,216,255,${a*0.12})`;
+          ctx.moveTo(p.x,p.y); ctx.lineTo(p2.x,p2.y); ctx.stroke();
         }
       }
     }
     requestAnimationFrame(draw);
   }
 
-  initParticles();
-  draw();
+  init(); draw();
 })();
 
-/* Init */
-window.addEventListener('load', () => {
-  if (location.hash){
-    const el = document.querySelector(location.hash);
-    if (el) setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'start'}), 100);
+/* ==== INIT ==== */
+window.addEventListener('load',()=>{
+  if(location.hash){
+    const el=document.querySelector(location.hash);
+    if(el) setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),100);
   }
-  updateActiveNav();
+  updateNav();
 });
 </script>
 </body>
