@@ -171,6 +171,66 @@
     .research-card img{max-width:240px;border-radius:12px;display:block;object-fit:cover}
     .research-card h3{margin:0 0 12px;font-size:1.3rem;display:flex;gap:10px;align-items:center;color:var(--accent)}
 
+    /* ==== TEACHING COLLAPSIBLE ==== */
+    .teaching-item {
+      margin-bottom: 14px;
+      border-bottom: 1px solid rgba(0,216,255,0.08);
+      padding-bottom: 6px;
+    }
+    .teaching-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 8px 0;
+      user-select: none;
+      transition: color var(--transition);
+    }
+    .teaching-header:hover { color: var(--accent); }
+    .teaching-header strong { color: var(--text); }
+    .toggle-icon {
+      font-size: .9rem;
+      color: var(--muted);
+      transition: transform .3s ease, color .3s ease;
+    }
+    .teaching-item.open .toggle-icon {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+    .teaching-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s cubic-bezier(.4,0,.2,1),
+                  padding .3s ease;
+      padding: 0 0 0 28px;
+    }
+    .teaching-item.open .teaching-content {
+      max-height: 600px;
+      padding: 14px 0 10px 28px;
+    }
+    .problem-sets { list-style:none; padding:0; margin:0; }
+    .problem-sets li {
+      margin: 7px 0;
+      position: relative;
+      padding-left: 20px;
+    }
+    .problem-sets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      font-size: .85rem;
+    }
+    .problem-sets a {
+      color: #a0d8f1;
+      text-decoration: none;
+      font-size: .95rem;
+      transition: color var(--transition);
+    }
+    .problem-sets a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
     /* ==== FOOTER ==== */
     footer{padding:32px 20px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);font-size:0.9rem}
 
@@ -200,27 +260,18 @@
     }
 
     @media (max-width: 900px){
-      /* Show mobile header & hide side nav */
       .mobile-header{display:flex}
       #side-nav{display:none}
-
       main{padding:20px}
       section{padding:40px 14px}
-
-      /* Home: stack columns */
       #home .container{flex-direction:column;align-items:center}
       #home .left-column,#home .right-column{width:100%;text-align:center}
       #home .left-column{margin-bottom:32px}
-
-      /* Research cards become vertical */
       .research-card{grid-template-columns:1fr}
       .research-card img{max-width:100%;margin-top:16px}
-
       .timeline{padding-left:16px}
       .timeline li{padding-left:18px}
-
       .research-block{padding:18px;border-radius:14px}
-
       .drawer{padding-top:28px}
       footer{padding:28px 12px;font-size:0.92rem}
     }
@@ -314,21 +365,21 @@
       <div class="stagger">
         <a href="https://meysam-hassandoust.github.io/files/Research/Selberg_Zeta_Flat_Space_Cosmologies.pdf" target="_blank" class="research-block" rel="noopener noreferrer">
           <h4>The imaginary phase problem in the gravitational path integral</h4>
-<div class="supervisor">completing</div>
+          <div class="supervisor">completing</div>
           <div class="supervisor">Supervisor: Prof. Amin Faraji Astaneh</div>
           <p>In the gravitational path integral, the saddle point approximation introduces an imaginary contribution—Polchinski's phase—which complicates state counting. Interestingly, this aligns with the structure of von Neumann algebras in gravitational regions. In de Sitter gravity, adopting an observer’s perspective transforms the region’s algebra into a type II von Neumann algebra, suggesting a potential link between Polchinski's phase and state counting.</p>
         </a>
 
         <a href="https://meysam-hassandoust.github.io/files/Research/Selberg_Zeta_Flat_Space_Cosmologies.pdf" target="_blank" class="research-block" rel="noopener noreferrer">
           <h4>Selberg Zeta in Flat Space Cosmologies</h4>
-		<div class="supervisor">Uncomplete</div>
+          <div class="supervisor">Uncomplete</div>
           <div class="supervisor">Supervisor: Prof. Reza Fareghbal</div>
           <p>A generalization of the Selberg zeta function to flat space cosmologies, exploring connections between number theory and quantum gravity in non-AdS spacetimes. In a series of papers, using certain conjectures about the Selberg zeta function, researchers were able to derive the gravitational partition function for flat space and BTZ black holes. Our approach, however, is based on a more rigorous definition grounded in number theory, allowing us to obtain the gravitational partition function for these geometries without relying on conjectures.</p>
         </a>
 
         <a href="https://meysam-hassandoust.github.io/files/Research/Berry_Phase_Topology.pdf" target="_blank" class="research-block" rel="noopener noreferrer">
           <h4>Topological Aspects of Berry Phase</h4>
-<div class="supervisor">Uncomplete</div>
+          <div class="supervisor">Uncomplete</div>
           <div class="supervisor">Supervisor: Prof. Siamak Sadat Gousheh</div>
           <p>The Berry phase captures the geometric and topological properties of a quantum system’s wavefunction under adiabatic evolution. Beyond a simple phase factor, it encodes topological information that underlies phenomena like the quantum Hall effect, topological insulators, and geometric magnetism, revealing how global system properties shape observable quantum behavior.</p>
         </a>
@@ -352,16 +403,155 @@
         </a>
       </div>
 
-      <h3 class="stagger">Teaching Assistant</h3>
-      <ul class="timeline stagger">
-        <li><strong>Physics Laboratory I</strong> – Sharif University of Technology (Fall 2024)</li>
-        <li><strong>Mathematical Physics I</strong> – Shahid Beheshti University (Fall 2023)</li>
-        <li><strong>Quantum Mechanics I</strong> – Shahid Beheshti University (Fall 2022)</li>
-        <li><strong>General Physics I</strong> – Shahid Beheshti University (Fall 2022)</li>
-        <li><strong>Mathematical Physics II</strong> – Shahid Beheshti University (Spring 2021)</li>
-        <li><strong>Analytical Mechanics II</strong> – Shahid Beheshti University (Spring 2021)</li>
-        <li><strong>Mathematical Physics I</strong> – Shahid Beheshti University (Fall 2020)</li>
-      </ul>
+      <!-- TEACHING ASSISTANT - GROUPED BY UNIVERSITY -->
+<h3 class="stagger">Teaching Assistant</h3>
+<div class="stagger">
+
+  <!-- ====================== SHARIF UNIVERSITY ====================== -->
+  <div class="university-group">
+    <div class="university-header" tabindex="0" role="button" aria-expanded="false">
+      <strong>Sharif University of Technology</strong>
+    </div>
+    <ul class="courses-list collapse">
+
+      <!-- Physics Laboratory I -->
+      <li class="teaching-item">
+        <div class="teaching-header" tabindex="0" role="button" aria-expanded="false">
+          <strong class="course-title">Physics Laboratory I</strong>
+          <span class="course-semester">&nbsp;&nbsp;&nbsp;&nbsp;Fall 2024</span>
+          <i class="fa fa-chevron-down toggle-icon" aria-hidden="true"></i>
+        </div>
+        <div class="teaching-content collapse">
+          <ul class="problem-sets">
+                      </ul>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- ====================== SHAHID BEHESHTI UNIVERSITY ====================== -->
+  <div class="university-group">
+    <div class="university-header" tabindex="0" role="button" aria-expanded="false">
+      <strong>Shahid Beheshti University</strong>
+    </div>
+    <ul class="courses-list collapse">
+
+      <!-- Mathematical Physics I -->
+      <li class="teaching-item">
+        <div class="teaching-header" tabindex="0" role="button" aria-expanded="false">
+          <strong class="course-title">Mathematical Physics I</strong>
+          <span class="course-semester">Fall 2023</span>
+          <i class="fa fa-chevron-down toggle-icon" aria-hidden="true"></i>
+        </div>
+        <div class="teaching-content collapse">
+          <ul class="problem-sets">
+            <li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/PS3.pdf" target="_blank" rel="noopener">Problem Set 3 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/PS4.pdf" target="_blank" rel="noopener">Problem Set 4 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/PS5.pdf" target="_blank" rel="noopener">Problem Set 5 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/PS6.pdf" target="_blank" rel="noopener">Problem Set 6 </a></li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- Quantum Mechanics I -->
+      <li class="teaching-item">
+        <div class="teaching-header" tabindex="0" role="button" aria-expanded="false">
+          <strong class="course-title">Quantum Mechanics I</strong>
+          <span class="course-semester">&nbsp;&nbsp;Fall 2022</span>
+          <i class="fa fa-chevron-down toggle-icon" aria-hidden="true"></i>
+        </div>
+        <div class="teaching-content collapse">
+          <ul class="problem-sets">
+                     
+
+</ul>
+        </div>
+      </li>
+
+      <!-- General Physics I -->
+      <li class="teaching-item">
+        <div class="teaching-header" tabindex="0" role="button" aria-expanded="false">
+          <strong class="course-title">General Physics I</strong>
+          <span class="course-semester">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fall 2022</span>
+          <i class="fa fa-chevron-down toggle-icon" aria-hidden="true"></i>
+        </div>
+        <div class="teaching-content collapse">
+          <ul class="problem-sets">
+            <li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet3.pdf" target="_blank" rel="noopener">Problem Set 3</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet4.pdf" target="_blank" rel="noopener">Problem Set 4</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet5.pdf" target="_blank" rel="noopener">Problem Set 5</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet6.pdf" target="_blank" rel="noopener">Problem Set 6</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet7.pdf" target="_blank" rel="noopener">Problem Set 7</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet8.pdf" target="_blank" rel="noopener">Problem Set 8</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet9.pdf" target="_blank" rel="noopener">Problem Set 9</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet10.pdf" target="_blank" rel="noopener">Problem Set 10</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet11.pdf" target="_blank" rel="noopener">Problem Set 11</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/General Physics I/ProblemSet12.pdf" target="_blank" rel="noopener">Problem Set 12</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- Mathematical Physics II -->
+<li class="teaching-item">
+  <div class="teaching-header" tabindex="0" role="button" aria-expanded="false">
+    <strong class="course-title">Mathematical Physics II</strong>
+    <span class="">Spring 2021</span>
+    <i class="fa fa-chevron-down toggle-icon" aria-hidden="true"></i>
+  </div>
+  <div class="teaching-content collapse">
+    <ul class="problem-sets">
+      <li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics II/PS1.pdf" target="_blank" rel="noopener">Problem Set 1</a></li>
+      <li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics II/PS2.pdf" target="_blank" rel="noopener">Problem Set 2</a></li>
+      <li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics II/PS3.pdf" target="_blank" rel="noopener">Problem Set 3</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics II/PS4.pdf" target="_blank" rel="noopener">Problem Set 4</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics II/PS5.pdf" target="_blank" rel="noopener">Problem Set 5</a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics II/PS6.pdf" target="_blank" rel="noopener">Problem Set 6</a></li>
+    </ul>
+  </div>
+</li>
+
+      <!-- Analytical Mechanics II -->
+      <li class="teaching-item">
+        <div class="teaching-header" tabindex="0" role="button" aria-expanded="false">
+          <strong class="course-title">Analytical Mechanics II</strong>
+          <span class="course-semester">Spring 2021</span>
+          <i class="fa fa-chevron-down toggle-icon" aria-hidden="true"></i>
+        </div>
+        <div class="teaching-content collapse">
+          <ul class="problem-sets">
+            
+          </ul>
+        </div>
+      </li>
+
+      <!-- Mathematical Physics I (Fall 2020) -->
+      <li class="teaching-item">
+        <div class="teaching-header" tabindex="0" role="button" aria-expanded="false">
+          <strong class="course-title">Mathematical Physics I</strong>
+          <span class="course-semester">Fall 2020</span>
+          <i class="fa fa-chevron-down toggle-icon" aria-hidden="true"></i>
+        </div>
+        <div class="teaching-content collapse">
+          <ul class="problem-sets">
+            <li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem set 1.pdf" target="_blank" rel="noopener">Problem Set 1 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem set 2.pdf" target="_blank" rel="noopener">Problem Set 2 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem Set3.pdf" target="_blank" rel="noopener">Problem Set 3 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem Set4.pdf" target="_blank" rel="noopener">Problem Set 4 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem Set 5.pdf" target="_blank" rel="noopener">Problem Set 5 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem set 6.pdf" target="_blank" rel="noopener">Problem Set 6 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem Set 7.pdf" target="_blank" rel="noopener">Problem Set 7 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem set 8.pdf" target="_blank" rel="noopener">Problem Set 8 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem Set 9.pdf" target="_blank" rel="noopener">Problem Set 9 </a></li>
+<li><a href="https://meysam-hassandoust.github.io/files/Problems/Mathematical Physics I/Problem set 10.pdf" target="_blank" rel="noopener">Problem Set 10 </a></li>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
 
       <h3 class="stagger">Achievements</h3>
       <ul class="timeline stagger">
@@ -564,6 +754,7 @@ if (!reduced){
       } else el.classList.remove('in-view');
     });
   },{threshold:0.15, rootMargin:'0px 0px -10% 0px'});
+  $$('.stagger').forEach
   $$('.stagger').forEach(el=>{ setDelays(el); obs.observe(el); });
   window.addEventListener('load',()=>setTimeout(()=>$$('.stagger').forEach(e=>e.classList.add('in-view')),600));
 } else $$('.stagger').forEach(e=>e.classList.add('in-view'));
@@ -626,6 +817,35 @@ if (!reduced){
 
   init(); draw();
 })();
+
+/* ==== TEACHING COLLAPSIBLE TOGGLE ==== */
+document.querySelectorAll('.teaching-header').forEach(header => {
+  const toggle = () => {
+    const item = header.parentElement;
+    const wasOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.teaching-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.teaching-header').setAttribute('aria-expanded', 'false');
+    });
+
+    // Reopen clicked one
+    if (!wasOpen) {
+      item.classList.add('open');
+      header.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  header.addEventListener('click', toggle);
+  header.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
+  });
+});
+
 
 /* ==== INIT ==== */
 window.addEventListener('load',()=>{
